@@ -88,8 +88,9 @@ Static sites can't process forms by themselves, so:
 - [ ] **Footer legal links** — Privacy Policy / Good Faith Estimate / Notice of
       Privacy Practices still point to `#`. Create those pages and paste their
       URLs into the **Footer** tab's legal links (see TODO.md in the site root).
-- [ ] **Email & phone** — Contact tab has `cassie@cassiebtherapy.com`
-      and `(952) 555-0100`; confirm the phone number.
+- [ ] **Email** — Contact tab has `cassie@cassiebtherapy.com`; confirm it works.
+      (The phone number was removed from the site per your preference — contact
+      is by email and the form only.)
 - [ ] **Your portrait** — the Hero tab's photo URL points at a placeholder
       Unsplash portrait. Upload your own photo under **Files** and paste its
       URL (the Hero / About / Locations photo URLs are all editable text

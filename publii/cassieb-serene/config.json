@@ -904,7 +904,7 @@
             "value": [
                 {
                     "title": "Get in touch",
-                    "text": "Send a note through the form below and share as much or as little as you like. I'll reply personally, usually within a day or two."
+                    "text": "Send a note through the form below and share as much or as little as you like. I'll reply personally to set up a time to talk."
                 },
                 {
                     "title": "Free consult",
@@ -1086,7 +1086,7 @@
             "name": "contactText",
             "label": "Section intro",
             "group": "Contact",
-            "value": "Send a brief note and I'll personally reply within 1–2 business days. Whatever you share is held with care.",
+            "value": "Send a brief note and I'll personally reply to schedule your free consultation. Whatever you share is held with care.",
             "type": "textarea"
         },
         {
@@ -1096,14 +1096,6 @@
             "value": "cassie@cassiebtherapy.com",
             "type": "text",
             "note": "Placeholder — replace with your real email."
-        },
-        {
-            "name": "contactPhone",
-            "label": "Phone number",
-            "group": "Contact",
-            "value": "(952) 555-0100",
-            "type": "text",
-            "note": "Placeholder — replace with your real phone number."
         },
         {
             "name": "contactOffice",
