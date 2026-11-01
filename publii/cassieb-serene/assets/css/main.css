@@ -474,48 +474,10 @@ section { padding: 96px 0; }
 .specialty-card p { color: var(--ink-soft); margin-bottom: 0; }
 
 /* ---------- Resonate ---------- */
-.resonate { text-align: center; }
 
-.resonate-list {
-    list-style: none;
-    max-width: 620px;
-    margin: 0 auto 30px;
-    padding: 0;
-    display: grid;
-    gap: 12px;
-    text-align: left;
-}
 
-.resonate-list li {
-    position: relative;
-    padding: 14px 18px 14px 52px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--ink);
-    font-size: 0.98rem;
-}
 
-.resonate-list li::before {
-    content: "";
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    width: 18px;
-    height: 18px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    border: 2px solid var(--accent);
-    background: var(--accent-tint);
-}
 
-.resonate-note {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.3rem;
-    color: var(--ink-soft);
-    margin-bottom: 34px;
-}
 
 /* ---------- Bookshelf ---------- */
 .bookshelf { background: var(--card); }

@@ -57,7 +57,6 @@
   /* ---------- Scroll reveal ---------- */
   if ("IntersectionObserver" in window) {
     var revealTargets = [
-      ".resonate-list li",
       ".about-content > *",
       ".about-art",
       ".workthrough-list li",

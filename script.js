@@ -60,7 +60,6 @@
   /* ---------- Scroll reveal ---------- */
   if ("IntersectionObserver" in window) {
     var revealTargets = [
-      ".resonate-list li",
       ".about-content > *",
       ".about-art",
       ".workthrough-list li",
@@ -68,8 +67,7 @@
       ".specialty-card",
       ".book-tile",
       ".nutsbolts-card",
-      ".faq-item",
-      ".stat"
+      ".faq-item"
     ];
 
     document.querySelectorAll(revealTargets.join(",")).forEach(function (el) {

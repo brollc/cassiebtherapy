@@ -221,25 +221,6 @@ p { margin: 0 0 1em; }
 /* ====================================================
    RESONATE
    ==================================================== */
-.resonate { padding: 80px 0; background: var(--cream); text-align: center; }
-.resonate-title { margin-bottom: 2.4em; }
-.resonate-list {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px;
-  max-width: 880px; margin: 0 auto 2.4em; text-align: left;
-}
-.resonate-list li {
-  position: relative; padding-left: 36px; color: var(--ink-soft);
-  font-size: 1.02rem; line-height: 1.6;
-}
-.resonate-list li::before {
-  content: "✿"; position: absolute; left: 0; top: -2px;
-  color: var(--leaf); font-size: 1.1rem; line-height: 1.6;
-}
-.resonate-note {
-  font-family: var(--font-head); font-style: italic; font-size: 1.4rem;
-  color: var(--leaf-deep); margin-bottom: 1.6em;
-}
-.resonate-note em { color: var(--clay); }
 
 /* ====================================================
    ABOUT
@@ -619,7 +600,6 @@ p { margin: 0 0 1em; }
   .hero-art-photo { height: 360px; }
   .about-grid { grid-template-columns: 1fr; gap: 56px; }
   .about-art { max-width: 460px; margin: 0 auto; }
-  .resonate-list, .workthrough-list { grid-template-columns: 1fr; gap: 12px; }
   .steps-grid, .different-grid, .specialties-grid, .notes-grid, .archive-grid { grid-template-columns: repeat(2, 1fr); }
   .locations-grid { grid-template-columns: 1fr; }
   .faq-layout { grid-template-columns: 1fr; gap: 32px; }

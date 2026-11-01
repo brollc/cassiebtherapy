@@ -31,7 +31,6 @@ Publii conventions, completely different look. Install one or the other
 | "The Work" paragraphs + the dive-deeper link on the homepage; the approach cards, questions & 5 beliefs below are kept for pasting onto your The Work page | **The Work** |
 | License number, degree, training lists (ARC, EMDR, Brainspotting, EFT, Gottman…) | **Nuts & Bolts** |
 | Specialty cards (Individual / Couples) | **Specialties** |
-| "Do any of these resonate?" checklist (8 items) | **Resonate** |
 | Bookshelf intro + "Browse the full bookshelf" link; the three book lists below (each with a cover-art URL) are kept for pasting onto your Bookshelf page | **Bookshelf** |
 | Getting-started steps | **Getting started** |
 | Blog section title/intro (section appears only once you write posts) | **Blog section** |
