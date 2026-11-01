@@ -54,6 +54,9 @@
         <p class="about-intro">{{ @config.custom.aboutIntro }}</p>
         <p>{{ @config.custom.aboutShort }}</p>
         <p>{{ @config.custom.aboutShort2 }}</p>
+        {{#if @config.custom.aboutGlad}}
+        <p class="about-glad">{{ @config.custom.aboutGlad }}</p>
+        {{/if}}
         {{#if @config.custom.aboutDiveLabel}}
         <p class="about-work-link">
           <a href="{{ @config.custom.aboutDiveUrl }}">{{ @config.custom.aboutDiveLabel }}</a>

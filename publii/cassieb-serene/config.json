@@ -156,8 +156,16 @@
             "name": "aboutShort2",
             "label": "Short homepage bio (paragraph 2)",
             "group": "About",
-            "value": "I believe therapy can hold both depth and lightness. It's a place for honesty, vulnerability, and sometimes a little laughter, too. My approach is thoughtful, relational, and collaborative, with room for curiosity, compassion, and the complexities of being human. I'm glad you're here.",
+            "value": "I believe therapy can hold both depth and lightness. It's a place for honesty, vulnerability, and sometimes a little laughter, too. My approach is thoughtful, relational, and collaborative, with room for curiosity, compassion, and the complexities of being human.",
             "type": "textarea"
+        },
+        {
+            "name": "aboutGlad",
+            "label": "Closing line (shown large & bold)",
+            "group": "About",
+            "value": "I'm glad you're here.",
+            "type": "text",
+            "note": "Leave empty to hide."
         },
         {
             "name": "aboutDiveLabel",
