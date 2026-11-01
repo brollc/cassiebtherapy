@@ -177,11 +177,6 @@ p { margin: 0 0 1em; }
   font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--clay); margin-bottom: 1.2em;
 }
-.hero-tagline {
-  font-family: var(--font-head); font-style: italic; font-size: 1.35rem;
-  color: var(--leaf-deep); margin-bottom: 1.2em; line-height: 1.4;
-}
-.hero-tagline em { color: var(--clay); }
 .hero-title { margin-bottom: 0.5em; }
 .hero-title .hl { position: relative; color: var(--leaf); white-space: nowrap; }
 .hero-title .hl::after {
