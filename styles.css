@@ -199,7 +199,7 @@ p { margin: 0 0 1em; }
   height: 420px;
   background:
     linear-gradient(160deg, rgba(107,142,90,0.0), rgba(68,97,58,0.35)),
-    url("images/cassie-headshot.jpg") center/cover;
+    url("images/cassie-headshot.jpg") top/cover;
   background-color: var(--leaf-light);
 }
 .hero-art-badge {
@@ -228,7 +228,7 @@ p { margin: 0 0 1em; }
   height: 500px;
   background:
     linear-gradient(160deg, rgba(155,184,138,0.0), rgba(68,97,58,0.3)),
-    url("images/cassie-headshot.jpg") center/cover;
+    url("images/sunrise-road.jpg") top/cover;
   background-color: var(--leaf-light);
 }
 .about-art-stamp {

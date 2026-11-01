@@ -308,7 +308,7 @@ section { padding: 96px 0; }
     border: 10px solid var(--card);
 }
 
-.hero-art-circle img { width: 100%; height: 100%; object-fit: cover; }
+.hero-art-circle img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
 .hero-art-badge {
     position: relative;
@@ -341,7 +341,7 @@ section { padding: 96px 0; }
     box-shadow: var(--shadow);
 }
 
-.about-art-frame img { width: 100%; height: 100%; object-fit: cover; }
+.about-art-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
 .about-art::before {
     content: "";

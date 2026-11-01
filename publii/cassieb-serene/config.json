@@ -228,7 +228,7 @@
             "name": "aboutPhotoUrl",
             "label": "About photo URL",
             "group": "About",
-            "value": "/assets/images/cassie-headshot.jpg",
+            "value": "/assets/images/sunrise-road.jpg",
             "type": "text",
             "note": "Replace with your own photo — upload under Files and paste its URL here."
         },
