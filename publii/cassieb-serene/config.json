@@ -1131,20 +1131,7 @@
             "label": "Legal links",
             "group": "Footer",
             "type": "repeater",
-            "value": [
-                {
-                    "label": "Privacy Policy",
-                    "url": "#"
-                },
-                {
-                    "label": "Good Faith Estimate",
-                    "url": "#"
-                },
-                {
-                    "label": "Notice of Privacy Practices",
-                    "url": "#"
-                }
-            ],
+            "value": [],
             "maxCount": -1,
             "hasEmptyState": true,
             "translations": {

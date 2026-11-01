@@ -10,11 +10,12 @@ of fees, pick your organization and your own wording, and it can be re-added
 (there's a `footerTagline` setting in the theme's Footer tab where a sentence
 like that would live).
 
-## Footer legal links need real targets
+## Footer legal links (hidden for now)
 
-The footer's legal links — **Privacy Policy**, **Good Faith Estimate**, and
-**Notice of Privacy Practices** — currently point to `#` placeholders on every
-page. To finish them:
+The footer's legal links — Privacy Policy, Good Faith Estimate, and
+Notice of Privacy Practices — are hidden until the pages exist. In the
+serene theme they're an empty repeater (add entries in the Footer tab
+once the pages are live).
 
 1. **Draft the three pages.** Sources for content:
    - *Notice of Privacy Practices* — your HIPAA notice; the HHS provides
