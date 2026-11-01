@@ -1,0 +1,890 @@
+{
+    "name": "Cassie B Therapy",
+    "version": "1.0.0.0",
+    "author": "Cassie Broll",
+    "renderer": {
+        "create404page": true,
+        "createTagPages": true,
+        "createAuthorPages": true,
+        "createSearchPage": false,
+        "createTagsList": false,
+        "createContentStructure": false,
+        "renderPrevNextPosts": false,
+        "relatedPostsNumber": 0
+    },
+    "supportedFeatures": {
+        "blockEditor": true,
+        "errorPage": true,
+        "pages": true
+    },
+    "config": [
+        {
+            "name": "postsPerPage",
+            "label": "Posts per page (keep high so the homepage doesn't paginate)",
+            "value": 999,
+            "type": "number"
+        },
+        {
+            "name": "tagsPostsPerPage",
+            "label": "Tags posts per page",
+            "value": 12,
+            "type": "number"
+        },
+        {
+            "name": "authorsPostsPerPage",
+            "label": "Authors posts per page",
+            "value": 12,
+            "type": "number"
+        },
+        {
+            "name": "excerptLength",
+            "label": "Excerpt length (words)",
+            "value": 30,
+            "type": "number"
+        }
+    ],
+    "customConfig": [
+        {
+            "name": "navCtaLabel",
+            "label": "Header button label",
+            "group": "Basics",
+            "value": "Get in Touch",
+            "type": "text"
+        },
+        {
+            "name": "crisisLineNote",
+            "label": "Crisis note (shown in footer)",
+            "group": "Basics",
+            "value": "In crisis? Call or text 988.",
+            "type": "text"
+        },
+        {
+            "name": "faviconUpload",
+            "label": "Upload favicon",
+            "group": "Basics",
+            "value": "",
+            "type": "smallupload",
+            "upload": true,
+            "note": "Optional. If empty, a leaf icon is used."
+        },
+        {
+            "name": "heroEyebrow",
+            "label": "Small text above the headline",
+            "group": "Hero",
+            "value": "Holistic · Somatic · Trauma-informed",
+            "type": "text"
+        },
+        {
+            "name": "heroTagline",
+            "label": "Italic tagline",
+            "group": "Hero",
+            "value": "Your story, your body, and your emotions deserve care.",
+            "type": "text"
+        },
+        {
+            "name": "heroTitle",
+            "label": "Headline (first part)",
+            "group": "Hero",
+            "value": "A slower, softer kind of therapy for the kind folks of",
+            "type": "text"
+        },
+        {
+            "name": "heroHighlight",
+            "label": "Headline (highlighted word)",
+            "group": "Hero",
+            "value": "Minnesota",
+            "type": "text"
+        },
+        {
+            "name": "heroSubtitle",
+            "label": "Sub-headline paragraph",
+            "group": "Hero",
+            "value": "Serving folks across Minnesota — in person and via secure telehealth statewide. Come as you are — messiness welcome.",
+            "type": "textarea"
+        },
+        {
+            "name": "heroBtn1",
+            "label": "Primary button label (links to contact form)",
+            "group": "Hero",
+            "value": "Get in Touch",
+            "type": "text"
+        },
+        {
+            "name": "heroBtn2",
+            "label": "Secondary button label (links to About)",
+            "group": "Hero",
+            "value": "Meet Cassie",
+            "type": "text"
+        },
+        {
+            "name": "heroPhotoUrl",
+            "label": "Hero photo URL",
+            "group": "Hero",
+            "value": "https://images.unsplash.com/photo-1518655048521-f130df041f66?auto=format&fit=crop&w=900&q=80",
+            "type": "text",
+            "note": "Paste any image URL here, or upload a photo under Files and paste its URL."
+        },
+        {
+            "name": "heroBadgeEmoji",
+            "label": "Badge emoji",
+            "group": "Hero",
+            "value": "🌿",
+            "type": "text"
+        },
+        {
+            "name": "heroBadgeText",
+            "label": "Badge text",
+            "group": "Hero",
+            "value": "Holistic & human care for Minnesota",
+            "type": "text"
+        },
+        {
+            "name": "resonateEyebrow",
+            "label": "Small text above the title",
+            "group": "Resonate",
+            "value": "Take a breath",
+            "type": "text"
+        },
+        {
+            "name": "resonateTitle",
+            "label": "Section title",
+            "group": "Resonate",
+            "value": "Do any of these resonate?",
+            "type": "text"
+        },
+        {
+            "name": "resonateItems",
+            "label": "Checklist items",
+            "group": "Resonate",
+            "type": "repeater",
+            "value": [
+                {
+                    "text": "You have stories you'd rather stuff down and never think about"
+                },
+                {
+                    "text": "You keep finding yourself stuck in the same patterns"
+                },
+                {
+                    "text": "You've been placing everyone's needs above your own"
+                },
+                {
+                    "text": "You want to change but the change never seems to last"
+                },
+                {
+                    "text": "Your anxiety is taking all the joy and fun out of life"
+                },
+                {
+                    "text": "Your body feels tense and tight all the time"
+                },
+                {
+                    "text": "You want to show up differently than your parents did"
+                },
+                {
+                    "text": "You feel like you 'should' be further along by now"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a checklist item",
+                "duplicateItem": "Duplicate item",
+                "removeItem": "Remove item",
+                "emptyState": "Click the button to add your first checklist item"
+            },
+            "structure": [
+                {
+                    "name": "text",
+                    "label": "Item text",
+                    "type": "text",
+                    "value": "",
+                    "width": 100
+                }
+            ]
+        },
+        {
+            "name": "resonateNote",
+            "label": "Closing line under the checklist",
+            "group": "Resonate",
+            "value": "Great news — welcome to being human.",
+            "type": "text"
+        },
+        {
+            "name": "aboutEyebrow",
+            "label": "Small text above the bio",
+            "group": "About",
+            "value": "Oh hi there!",
+            "type": "text"
+        },
+        {
+            "name": "aboutIntro",
+            "label": "Intro line (shown in italics)",
+            "group": "About",
+            "value": "I'm Cassie Broll — a licensed counselor specializing in holistic, somatic, trauma-informed care for the kind folks of Minnesota.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutP1",
+            "label": "Bio paragraph 1",
+            "group": "About",
+            "value": "Life's hard, isn't it? Most of us go through our days thinking we're all alone, we're the problem, or we need to be 'fixed.' The truth is, there's a lot more right with you than you give yourself credit for.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutP2",
+            "label": "Bio paragraph 2",
+            "group": "About",
+            "value": "Therapy is a messy, playful, and sacred journey to discover this for yourself. My role is to help create a space for you to explore all the parts of you and your story. While you'll surely run into heartbreak and grief, you might be surprised to find there's much more treasure within you than you could ever realize alone.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutP3",
+            "label": "Bio paragraph 3",
+            "group": "About",
+            "value": "Once we spend time in your story, you'll find that you make so much sense. Your nervous system created incredibly wise ways to keep you safe when you were younger. Together, we'll help those parts get the care they need so you can show up in ways that feel better today.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutPhotoUrl",
+            "label": "About photo URL",
+            "group": "About",
+            "value": "https://images.unsplash.com/photo-1543872084-c7bd3822856f?auto=format&fit=crop&w=800&q=80",
+            "type": "text"
+        },
+        {
+            "name": "aboutCreds",
+            "label": "Credential cards",
+            "group": "About",
+            "type": "repeater",
+            "value": [
+                {
+                    "icon": "🎓",
+                    "title": "M.A./M.S., Clinical Mental Health Counseling",
+                    "subtitle": "Licensed Professional Clinical Counselor (LPCC), Minnesota"
+                },
+                {
+                    "icon": "🌿",
+                    "title": "Holistic & somatic approach",
+                    "subtitle": "Trauma-informed care"
+                },
+                {
+                    "icon": "🪴",
+                    "title": "Now accepting new clients",
+                    "subtitle": "Licensed in Minnesota"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a credential card",
+                "duplicateItem": "Duplicate card",
+                "removeItem": "Remove card",
+                "emptyState": "Click the button to add your first credential card"
+            },
+            "structure": [
+                {
+                    "name": "icon",
+                    "label": "Icon (emoji)",
+                    "type": "text",
+                    "value": "",
+                    "width": 20
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                },
+                {
+                    "name": "subtitle",
+                    "label": "Subtitle",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                }
+            ]
+        },
+        {
+            "name": "workthroughTitle",
+            "label": "Section title",
+            "group": "Glimpse",
+            "value": "Here's a glimpse of what we'll work through together",
+            "type": "text"
+        },
+        {
+            "name": "workthroughItems",
+            "label": "List items",
+            "group": "Glimpse",
+            "type": "repeater",
+            "value": [
+                {
+                    "text": "What healthy boundaries look like in your life"
+                },
+                {
+                    "text": "Treating your humanness with compassion instead of something to conquer"
+                },
+                {
+                    "text": "Sitting with uncomfortable emotions so they don't rule your life"
+                },
+                {
+                    "text": "Engaging in conflict instead of avoiding it in your relationships"
+                },
+                {
+                    "text": "A life beyond perfectionism — where messiness & play are embraced"
+                },
+                {
+                    "text": "Getting unstuck so you can start creating again"
+                },
+                {
+                    "text": "Exploring your relationship to failure and learning to experiment instead"
+                },
+                {
+                    "text": "Processing the trauma stories with curiosity and care"
+                },
+                {
+                    "text": "Creating & maintaining healthy friendships in your life"
+                },
+                {
+                    "text": "Self-care rooted in the uniqueness of your story"
+                },
+                {
+                    "text": "Embracing a slower pace — a life beyond constant burnout"
+                },
+                {
+                    "text": "Noticing the different parts of yourself without judgment"
+                },
+                {
+                    "text": "A kinder relationship with your body and food"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a list item",
+                "duplicateItem": "Duplicate item",
+                "removeItem": "Remove item",
+                "emptyState": "Click the button to add your first list item"
+            },
+            "structure": [
+                {
+                    "name": "text",
+                    "label": "Item text",
+                    "type": "text",
+                    "value": "",
+                    "width": 100
+                }
+            ]
+        },
+        {
+            "name": "workthroughNote",
+            "label": "Closing line",
+            "group": "Glimpse",
+            "value": "You don't need to do the hard things alone. Allow yourself to be supported in your healing work.",
+            "type": "text"
+        },
+        {
+            "name": "stepsEyebrow",
+            "label": "Small text above the title",
+            "group": "Getting started",
+            "value": "Ready when you are",
+            "type": "text"
+        },
+        {
+            "name": "stepsTitle",
+            "label": "Section title",
+            "group": "Getting started",
+            "value": "Here's how to get started",
+            "type": "text"
+        },
+        {
+            "name": "stepsLead",
+            "label": "Section intro",
+            "group": "Getting started",
+            "value": "Asking for help is hard and brave. Here's the gentle path forward.",
+            "type": "textarea"
+        },
+        {
+            "name": "stepsItems",
+            "label": "Steps (numbered automatically)",
+            "group": "Getting started",
+            "type": "repeater",
+            "value": [
+                {
+                    "title": "Get in touch",
+                    "text": "Answer a few questions about yourself. You'll get a warm reply within 1–2 business days to schedule your consultation."
+                },
+                {
+                    "title": "Free consult",
+                    "text": "We'll have a 15–20 minute video call so you can make sure we're the right fit and ask any questions you have."
+                },
+                {
+                    "title": "Begin your journey",
+                    "text": "We'll pick a day for our first session, and you'll begin the journey to living your fullest, most authentic life."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a step",
+                "duplicateItem": "Duplicate step",
+                "removeItem": "Remove step",
+                "emptyState": "Click the button to add the first step"
+            },
+            "structure": [
+                {
+                    "name": "title",
+                    "label": "Step title",
+                    "type": "text",
+                    "value": "",
+                    "width": 30
+                },
+                {
+                    "name": "text",
+                    "label": "Step text",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 70,
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "name": "differentEyebrow",
+            "label": "Small text above the title",
+            "group": "Approach",
+            "value": "What makes Cassie B different?",
+            "type": "text"
+        },
+        {
+            "name": "differentTitle",
+            "label": "Section title",
+            "group": "Approach",
+            "value": "A practice built around you",
+            "type": "text"
+        },
+        {
+            "name": "differentLead",
+            "label": "Section intro",
+            "group": "Approach",
+            "value": "Six things that shape how we work together.",
+            "type": "textarea"
+        },
+        {
+            "name": "diffCards",
+            "label": "Value cards",
+            "group": "Approach",
+            "type": "repeater",
+            "value": [
+                {
+                    "icon": "🫂",
+                    "title": "We welcome all parts of you",
+                    "text": "Ever feel like one part of you wants to change and another wants to stay exactly the same? Very human. Our work helps you make sense of all those parts so you feel more integrated and connected."
+                },
+                {
+                    "icon": "💛",
+                    "title": "We focus on your needs",
+                    "text": "Don't know what your needs are? Or does the idea of having needs make your stomach turn? You'll find out what needs you do have, why they've had to be dismissed, and how to begin honoring them."
+                },
+                {
+                    "icon": "💧",
+                    "title": "We embrace emotions",
+                    "text": "If you've ever apologized for crying, you're not alone. You'll do some healthy unlearning about emotions and explore why they're showing up and the wisdom they offer in the present moment."
+                },
+                {
+                    "icon": "🤝",
+                    "title": "We center the relationship",
+                    "text": "Therapy is a microcosm of your outside world — what shows up there will show up here. That's great news: you'll have a safe, nonjudgmental place to explore those dynamics and practice being assertive."
+                },
+                {
+                    "icon": "🌱",
+                    "title": "We help you come back to your body",
+                    "text": "Your body might be the single most underrated tool you have. You'll learn about your nervous system and discover how to be in your body instead of spending so much energy trying to get out of it."
+                },
+                {
+                    "icon": "✨",
+                    "title": "We guide you to more of yourself",
+                    "text": "The world is a richer place when you show up as fully and authentically you. The work centers around helping you have more of yourself so you can show up in ways aligned with who you truly are."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a value card",
+                "duplicateItem": "Duplicate card",
+                "removeItem": "Remove card",
+                "emptyState": "Click the button to add your first value card"
+            },
+            "structure": [
+                {
+                    "name": "icon",
+                    "label": "Icon (emoji)",
+                    "type": "text",
+                    "value": "",
+                    "width": 15
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "value": "",
+                    "width": 35
+                },
+                {
+                    "name": "text",
+                    "label": "Text",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 50,
+                    "rows": 4
+                }
+            ]
+        },
+        {
+            "name": "specialtiesEyebrow",
+            "label": "Small text above the title",
+            "group": "Specialties",
+            "value": "Specialties",
+            "type": "text"
+        },
+        {
+            "name": "specialtiesTitle",
+            "label": "Section title",
+            "group": "Specialties",
+            "value": "If you're ready for something slower, softer, deeper…",
+            "type": "text"
+        },
+        {
+            "name": "specialtiesLead",
+            "label": "Section intro",
+            "group": "Specialties",
+            "value": "…you're in the right place. Available for folks living across Minnesota.",
+            "type": "textarea"
+        },
+        {
+            "name": "specialtyCards",
+            "label": "Specialty cards",
+            "group": "Specialties",
+            "type": "repeater",
+            "value": [
+                {
+                    "icon": "🌿",
+                    "title": "Somatic Therapy",
+                    "text": "Somatic Experiencing helps alleviate trauma and brings you into a fuller relationship with yourself — more capacity for life's challenges while staying connected to yourself."
+                },
+                {
+                    "icon": "🕊️",
+                    "title": "Trauma Therapy",
+                    "text": "Curious if you have stories of trauma that need care? Holistic therapy and counseling for trauma healing, offered with curiosity and care — never rush."
+                },
+                {
+                    "icon": "🍃",
+                    "title": "Anxiety Therapy",
+                    "text": "I want you to enjoy your coffee without worrying if it'll spike your anxiety! Your anxiety needs care, and a holistic approach can help it soften."
+                },
+                {
+                    "icon": "🌸",
+                    "title": "Disordered Eating & Body",
+                    "text": "Struggling with your relationship to food and/or your body? You're in the right place. Healing, growth, and a kinder relationship with your body are possible."
+                },
+                {
+                    "icon": "🌻",
+                    "title": "Friendship Therapy",
+                    "text": "Yes, you read that right. Friendships are cornerstone relationships that rarely get the care they deserve. Therapy for two friends who want to repair and grow together."
+                },
+                {
+                    "icon": "🍂",
+                    "title": "Grief & Transitions",
+                    "text": "Honoring what's been lost — a person, a relationship, a role, a chapter. Compassionate support for navigating change at your own pace."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a specialty card",
+                "duplicateItem": "Duplicate card",
+                "removeItem": "Remove card",
+                "emptyState": "Click the button to add your first specialty card"
+            },
+            "structure": [
+                {
+                    "name": "icon",
+                    "label": "Icon (emoji)",
+                    "type": "text",
+                    "value": "",
+                    "width": 15
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "value": "",
+                    "width": 35
+                },
+                {
+                    "name": "text",
+                    "label": "Text",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 50,
+                    "rows": 4
+                }
+            ]
+        },
+        {
+            "name": "faqEyebrow",
+            "label": "Small text above the title",
+            "group": "FAQ",
+            "value": "Good to know",
+            "type": "text"
+        },
+        {
+            "name": "faqTitle",
+            "label": "Section title",
+            "group": "FAQ",
+            "value": "Common questions",
+            "type": "text"
+        },
+        {
+            "name": "faqIntro",
+            "label": "Intro text (beside the questions)",
+            "group": "FAQ",
+            "value": "Starting therapy brings up a lot of questions — that's more than okay. Here are the ones I hear most often.",
+            "type": "textarea"
+        },
+        {
+            "name": "faqItems",
+            "label": "Questions & answers",
+            "group": "FAQ",
+            "type": "repeater",
+            "value": [
+                {
+                    "question": "How long is each session?",
+                    "answer": "Standard sessions are 50 minutes. Extended 80-minute sessions are available for couples or deeper trauma-focused work if we decide that's right for you."
+                },
+                {
+                    "question": "Do you accept insurance?",
+                    "answer": "I'm an out-of-network provider. I'll provide a monthly superbill you can submit to your insurer for potential reimbursement. I'm glad to help you check your benefits before we begin."
+                },
+                {
+                    "question": "What are your rates?",
+                    "answer": "Individual sessions are $165 and couples/friendship sessions are $215. A limited number of sliding-scale slots are available — please don't hesitate to ask."
+                },
+                {
+                    "question": "Online or in-person?",
+                    "answer": "Both. Telehealth happens on a secure, HIPAA-compliant platform, and in-person sessions are held at my Minnesota office. Many folks do a mix of the two."
+                },
+                {
+                    "question": "How do I know if we're a good fit?",
+                    "answer": "That's exactly what the free 15–20 minute consultation is for. It's a low-pressure conversation to see if my style and approach feel right for you. If not, I'm glad to offer referrals."
+                },
+                {
+                    "question": "Is everything confidential?",
+                    "answer": "Yes. Your privacy is protected by law and by my own ethical commitment. The only exceptions are standard legal duties around imminent harm, which we'll discuss in our first session."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a question",
+                "duplicateItem": "Duplicate question",
+                "removeItem": "Remove question",
+                "emptyState": "Click the button to add your first question"
+            },
+            "structure": [
+                {
+                    "name": "question",
+                    "label": "Question",
+                    "type": "text",
+                    "value": "",
+                    "width": 35
+                },
+                {
+                    "name": "answer",
+                    "label": "Answer",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 65,
+                    "rows": 4
+                }
+            ]
+        },
+        {
+            "name": "notesEyebrow",
+            "label": "Small text above the title",
+            "group": "Blog section",
+            "value": "Notes & resources",
+            "type": "text"
+        },
+        {
+            "name": "notesTitle",
+            "label": "Section title",
+            "group": "Blog section",
+            "value": "From the blog",
+            "type": "text"
+        },
+        {
+            "name": "notesLead",
+            "label": "Section intro",
+            "group": "Blog section",
+            "value": "Occasional notes on healing, anxiety, trauma, and the messy, sacred work of being human.",
+            "type": "textarea"
+        },
+        {
+            "name": "contactEyebrow",
+            "label": "Small text above the title",
+            "group": "Contact",
+            "value": "Take the first step",
+            "type": "text"
+        },
+        {
+            "name": "contactTitle",
+            "label": "Section title",
+            "group": "Contact",
+            "value": "Say yes to care for your story, emotions, and body",
+            "type": "text"
+        },
+        {
+            "name": "contactText",
+            "label": "Section intro",
+            "group": "Contact",
+            "value": "Send a brief note and I'll personally reply within two business days to schedule your free consultation. Whatever you share is held with care.",
+            "type": "textarea"
+        },
+        {
+            "name": "contactEmail",
+            "label": "Email address",
+            "group": "Contact",
+            "value": "cassie@cassiebtherapy.com",
+            "type": "text"
+        },
+        {
+            "name": "contactPhone",
+            "label": "Phone number",
+            "group": "Contact",
+            "value": "(952) 555-0100",
+            "type": "text"
+        },
+        {
+            "name": "contactOffice",
+            "label": "Office line",
+            "group": "Contact",
+            "value": "Minnesota",
+            "type": "text"
+        },
+        {
+            "name": "contactHours",
+            "label": "Hours line",
+            "group": "Contact",
+            "value": "By appointment · Telehealth across MN",
+            "type": "text"
+        },
+        {
+            "name": "contactFormEndpoint",
+            "label": "Contact form endpoint (Formspree)",
+            "group": "Contact",
+            "value": "",
+            "type": "text",
+            "note": "Recommended: create a free form at formspree.io, then paste the endpoint URL (looks like https://formspree.io/f/xxxxxxx) here. If left empty, the form falls back to opening the visitor's email app."
+        },
+        {
+            "name": "closingEyebrow",
+            "label": "Small text above the title",
+            "group": "Closing",
+            "value": "Healing is possible",
+            "type": "text"
+        },
+        {
+            "name": "closingTitle",
+            "label": "Section title",
+            "group": "Closing",
+            "value": "Healing and growth are possible.",
+            "type": "text"
+        },
+        {
+            "name": "closingText",
+            "label": "Section text",
+            "group": "Closing",
+            "value": "Reaching out to ask for help is a big deal and one I don't take lightly. If you're in Minnesota and looking for somatic therapy that brings you into contact with more of you, schedule your free 20-minute consult below. I'm looking forward to connecting with you soon.",
+            "type": "textarea"
+        },
+        {
+            "name": "closingBtnLabel",
+            "label": "Button label",
+            "group": "Closing",
+            "value": "Get Started Today",
+            "type": "text"
+        },
+        {
+            "name": "footerTagline",
+            "label": "Footer tagline",
+            "group": "Footer",
+            "value": "Holistic, somatic, trauma-informed counseling. A slower, softer, deeper kind of care.",
+            "type": "textarea"
+        },
+        {
+            "name": "footerGivingText",
+            "label": "Giving note (first part)",
+            "group": "Footer",
+            "value": "A portion of all session fees is donated to",
+            "type": "text"
+        },
+        {
+            "name": "footerGivingUrl",
+            "label": "Giving note (link URL)",
+            "group": "Footer",
+            "value": "https://thelovelandfoundation.org",
+            "type": "text"
+        },
+        {
+            "name": "footerGivingLinkLabel",
+            "label": "Giving note (link text)",
+            "group": "Footer",
+            "value": "The Loveland Foundation",
+            "type": "text"
+        },
+        {
+            "name": "footerLegalLinks",
+            "label": "Legal links",
+            "group": "Footer",
+            "type": "repeater",
+            "value": [
+                {
+                    "label": "Privacy Policy",
+                    "url": "#"
+                },
+                {
+                    "label": "Good Faith Estimate",
+                    "url": "#"
+                },
+                {
+                    "label": "Notice of Privacy Practices",
+                    "url": "#"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a link",
+                "duplicateItem": "Duplicate link",
+                "removeItem": "Remove link",
+                "emptyState": "Click the button to add your first link"
+            },
+            "structure": [
+                {
+                    "name": "label",
+                    "label": "Link text",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                },
+                {
+                    "name": "url",
+                    "label": "URL",
+                    "type": "text",
+                    "value": "",
+                    "width": 60
+                }
+            ]
+        }
+    ]
+}

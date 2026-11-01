@@ -1,0 +1,333 @@
+{{!
+  Cassie B Therapy — Publii homepage template.
+  All visible content is edited in Publii under: Theme → Theme settings (Custom settings tabs).
+}}
+{{> head}}
+{{> header}}
+
+<main id="main">
+
+  {{! ================= HERO ================= }}
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <svg class="leaf-deco leaf-1" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 95C20 70 5 50 5 30 25 35 45 60 50 95zM50 95C80 70 95 50 95 30 75 35 55 60 50 95z" fill="var(--leaf-light)" opacity="0.5"/></svg>
+      <svg class="leaf-deco leaf-2" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 95C20 70 5 50 5 30 25 35 45 60 50 95zM50 95C80 70 95 50 95 30 75 35 55 60 50 95z" fill="var(--moss)" opacity="0.4"/></svg>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">{{ @config.custom.heroEyebrow }}</p>
+        <p class="hero-tagline">{{ @config.custom.heroTagline }}</p>
+        <h1 class="hero-title">{{ @config.custom.heroTitle }} <span class="hl">{{ @config.custom.heroHighlight }}</span></h1>
+        <p class="hero-subtitle">{{ @config.custom.heroSubtitle }}</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">{{ @config.custom.heroBtn1 }}</a>
+          <a href="#about" class="btn btn-ghost">{{ @config.custom.heroBtn2 }}</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-art-circle"></div>
+        <div class="hero-art-frame">
+          <div class="hero-art-photo" style="background-image: linear-gradient(160deg, rgba(107,142,90,0.0), rgba(68,97,58,0.35)), url('{{ @config.custom.heroPhotoUrl }}')"></div>
+        </div>
+        <div class="hero-art-badge">
+          <span class="badge-emoji">{{ @config.custom.heroBadgeEmoji }}</span>
+          <span class="badge-text">{{ @config.custom.heroBadgeText }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0 70 C 240 110 480 20 720 50 C 960 80 1200 110 1440 60 L1440 110 L0 110 Z" fill="var(--cream)"/></svg>
+    </div>
+  </section>
+
+  {{! ================= RESONATE ================= }}
+  <section class="resonate" id="resonate">
+    <div class="container">
+      <p class="section-eyebrow">{{ @config.custom.resonateEyebrow }}</p>
+      <h2 class="resonate-title">{{ @config.custom.resonateTitle }}</h2>
+      <ul class="resonate-list">
+        {{#each @config.custom.resonateItems}}
+        <li>{{text}}</li>
+        {{/each}}
+      </ul>
+      <p class="resonate-note">{{ @config.custom.resonateNote }}</p>
+      <a href="#contact" class="btn btn-primary">{{ @config.custom.navCtaLabel }}</a>
+    </div>
+  </section>
+
+  {{! ================= ABOUT ================= }}
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-art" aria-hidden="true">
+        <div class="about-art-frame">
+          <div class="about-art-photo" style="background-image: linear-gradient(160deg, rgba(155,184,138,0.0), rgba(68,97,58,0.3)), url('{{ @config.custom.aboutPhotoUrl }}')"></div>
+        </div>
+        <div class="about-art-stamp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.4 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8L12 2z" fill="var(--cream)"/></svg>
+          Trauma-informed
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="section-eyebrow">{{ @config.custom.aboutEyebrow }}</p>
+        <p class="about-intro">{{ @config.custom.aboutIntro }}</p>
+        <p>{{ @config.custom.aboutP1 }}</p>
+        <p>{{ @config.custom.aboutP2 }}</p>
+        <p>{{ @config.custom.aboutP3 }}</p>
+        <div class="about-creds">
+          {{#each @config.custom.aboutCreds}}
+          <div class="cred">
+            <span class="cred-icon" aria-hidden="true">{{icon}}</span>
+            <div>
+              <strong>{{title}}</strong>
+              <span>{{subtitle}}</span>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{! ================= WORKTHROUGH ================= }}
+  <section class="workthrough">
+    <div class="container">
+      <div class="workthrough-head">
+        <p class="section-eyebrow eyebrow-light">A glimpse ahead</p>
+        <h2 class="workthrough-title">{{ @config.custom.workthroughTitle }}</h2>
+      </div>
+      <ul class="workthrough-list">
+        {{#each @config.custom.workthroughItems}}
+        <li>{{text}}</li>
+        {{/each}}
+      </ul>
+      <p class="workthrough-note">{{ @config.custom.workthroughNote }}</p>
+      <a href="#contact" class="btn btn-cream">{{ @config.custom.navCtaLabel }}</a>
+    </div>
+  </section>
+
+  {{! ================= STEPS ================= }}
+  <section class="steps" id="get-started">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">{{ @config.custom.stepsEyebrow }}</p>
+        <h2>{{ @config.custom.stepsTitle }}</h2>
+        <p class="section-lead">{{ @config.custom.stepsLead }}</p>
+      </div>
+
+      <div class="steps-grid">
+        {{#each @config.custom.stepsItems}}
+        <div class="step">
+          <span class="step-num" aria-hidden="true"></span>
+          <h3>{{title}}</h3>
+          <p>{{text}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{! ================= APPROACH / DIFFERENT ================= }}
+  <section class="different" id="approach">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">{{ @config.custom.differentEyebrow }}</p>
+        <h2>{{ @config.custom.differentTitle }}</h2>
+        <p class="section-lead">{{ @config.custom.differentLead }}</p>
+      </div>
+
+      <div class="different-grid">
+        {{#each @config.custom.diffCards}}
+        <article class="diff-card">
+          <span class="diff-icon" aria-hidden="true">{{icon}}</span>
+          <h3>{{title}}</h3>
+          <p>{{text}}</p>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{! ================= SPECIALTIES ================= }}
+  <section class="specialties" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-eyebrow">{{ @config.custom.specialtiesEyebrow }}</p>
+        <h2>{{ @config.custom.specialtiesTitle }}</h2>
+        <p class="section-lead">{{ @config.custom.specialtiesLead }}</p>
+      </div>
+
+      <div class="specialties-grid">
+        {{#each @config.custom.specialtyCards}}
+        <article class="specialty-card">
+          <div class="specialty-icon" aria-hidden="true">{{icon}}</div>
+          <h3>{{title}}</h3>
+          <p>{{text}}</p>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{! ================= BLOG POSTS (renders only when posts exist) ================= }}
+  {{#each posts}}
+    {{#if @first}}
+    <section class="notes" id="notes">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">{{ @config.custom.notesEyebrow }}</p>
+          <h2>{{ @config.custom.notesTitle }}</h2>
+          <p class="section-lead">{{ @config.custom.notesLead }}</p>
+        </div>
+        <div class="notes-grid">
+    {{/if}}
+          <article class="note-card">
+            {{#featuredImage}}
+              {{#if url}}
+              <a class="note-photo" href="{{../url}}">
+                <img src="{{url}}" {{lazyload "lazy"}} alt="{{alt}}" height="{{height}}" width="{{width}}">
+              </a>
+              {{/if}}
+            {{/featuredImage}}
+            <div class="note-body">
+              <h3><a href="{{url}}">{{title}}</a></h3>
+              <p>{{{excerpt}}}</p>
+              <p class="note-meta"><time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">{{date createdAt}}</time></p>
+            </div>
+          </article>
+    {{#if @last}}
+        </div>
+      </div>
+    </section>
+    {{/if}}
+  {{/each}}
+
+  {{! ================= FAQ ================= }}
+  <section class="faq" id="faq">
+    <div class="container faq-layout">
+      <div class="faq-aside">
+        <p class="section-eyebrow">{{ @config.custom.faqEyebrow }}</p>
+        <h2>{{ @config.custom.faqTitle }}</h2>
+        <p>{{ @config.custom.faqIntro }}</p>
+        <a href="#contact" class="btn btn-primary">Ask your own</a>
+      </div>
+      <div class="faq-list">
+        {{#each @config.custom.faqItems}}
+        <details class="faq-item"{{#if @first}} open{{/if}}>
+          <summary>
+            <span>{{question}}</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-body"><p>{{answer}}</p></div>
+        </details>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{! ================= CLOSING CTA ================= }}
+  <section class="closing">
+    <div class="container closing-inner">
+      <div class="closing-deco" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="120" height="120"><path d="M100 190C40 150 10 110 10 60 50 70 90 110 100 190zM100 190C160 150 190 110 190 60 150 70 110 110 100 190z" fill="rgba(247,244,237,0.25)"/></svg>
+      </div>
+      <p class="section-eyebrow eyebrow-light">{{ @config.custom.closingEyebrow }}</p>
+      <h2>{{ @config.custom.closingTitle }}</h2>
+      <p>{{ @config.custom.closingText }}</p>
+      <a href="#contact" class="btn btn-cream">{{ @config.custom.closingBtnLabel }}</a>
+    </div>
+  </section>
+
+  {{! ================= CONTACT ================= }}
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow eyebrow-light">{{ @config.custom.contactEyebrow }}</p>
+        <h2>{{ @config.custom.contactTitle }}</h2>
+        <p>{{ @config.custom.contactText }}</p>
+
+        <ul class="contact-details">
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M3 6l9 7 9-7M3 6v12h18V6M3 6h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div><span class="contact-label">Email</span><a href="mailto:{{ @config.custom.contactEmail }}">{{ @config.custom.contactEmail }}</a></div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M5 4h3l2 5-2 1c1 2 3 4 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </span>
+            <div><span class="contact-label">Phone</span><a href="tel:{{ @config.custom.contactPhone }}">{{ @config.custom.contactPhone }}</a></div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+            </span>
+            <div><span class="contact-label">Office</span><span>{{ @config.custom.contactOffice }}</span></div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div><span class="contact-label">Hours</span><span>{{ @config.custom.contactHours }}</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm" data-email="{{ @config.custom.contactEmail }}" novalidate{{#if @config.custom.contactFormEndpoint}} action="{{ @config.custom.contactFormEndpoint }}" method="POST"{{/if}}>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+            <span class="form-error" data-error-for="name">Please tell me your name.</span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <span class="form-error" data-error-for="email">Please enter a valid email.</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="service">I'm interested in</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option>Somatic therapy</option>
+              <option>Trauma therapy</option>
+              <option>Anxiety therapy</option>
+              <option>Disordered eating / body</option>
+              <option>Friendship therapy</option>
+              <option>Grief &amp; transitions</option>
+              <option>Free consultation</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="message">What's bringing you to therapy?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Share as much or as little as you'd like..."></textarea>
+        </div>
+        <div class="form-field form-checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">I understand this form is not for emergencies. In a crisis I'll call or text 988.</label>
+          <span class="form-error" data-error-for="consent">Please acknowledge to continue.</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <p class="form-success" id="formSuccess" role="status" hidden>Thank you — your message has been received. I'll reply within two business days. 💚</p>
+        <p class="form-crisis">If you're in crisis or having thoughts of self-harm, please call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline) or go to your nearest emergency room.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+{{> footer}}

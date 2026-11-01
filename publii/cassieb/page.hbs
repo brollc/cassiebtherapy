@@ -1,0 +1,21 @@
+{{! Static page (Privacy Policy, etc.) }}
+{{> head}}
+{{> header}}
+
+<main id="main" class="post-page">
+  <div class="container">
+    {{#page}}
+    <article class="post-article">
+      <header class="post-header">
+        <h1>{{title}}</h1>
+      </header>
+      <div class="post-content">
+        {{{text}}}
+      </div>
+      <p class="post-back"><a href="{{ @website.baseUrl }}">&larr; Back home</a></p>
+    </article>
+    {{/page}}
+  </div>
+</main>
+
+{{> footer}}

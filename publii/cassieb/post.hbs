@@ -1,0 +1,35 @@
+{{! Single blog post }}
+{{> head}}
+{{> header}}
+
+<main id="main" class="post-page">
+  <div class="container">
+    {{#post}}
+    <article class="post-article">
+      <header class="post-header">
+        <p class="post-eyebrow">{{ @config.custom.notesEyebrow }}</p>
+        <h1>{{title}}</h1>
+        <p class="post-meta">
+          <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">{{date createdAt}}</time>
+        </p>
+      </header>
+
+      {{#featuredImage}}
+        {{#if url}}
+        <figure class="post-hero-image">
+          <img src="{{url}}" {{lazyload "lazy"}} alt="{{alt}}" height="{{height}}" width="{{width}}">
+        </figure>
+        {{/if}}
+      {{/featuredImage}}
+
+      <div class="post-content">
+        {{{text}}}
+      </div>
+
+      <p class="post-back"><a href="{{ @website.baseUrl }}">&larr; Back home</a></p>
+    </article>
+    {{/post}}
+  </div>
+</main>
+
+{{> footer}}

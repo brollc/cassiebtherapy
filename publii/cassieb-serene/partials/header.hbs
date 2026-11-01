@@ -1,0 +1,30 @@
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="{{ @website.baseUrl }}#home" class="logo" aria-label="{{ @website.name }} — home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="19" fill="var(--accent-soft)"/>
+          <circle cx="22" cy="22" r="11" fill="none" stroke="var(--accent)" stroke-width="2"/>
+          <circle cx="22" cy="22" r="4.5" fill="var(--accent)"/>
+        </svg>
+      </span>
+      <span class="logo-text">{{ @website.name }}</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="{{ @website.baseUrl }}#about">About</a></li>
+        <li><a href="{{ @website.baseUrl }}#the-work">The Work</a></li>
+        <li><a href="{{ @website.baseUrl }}#services">Specialties</a></li>
+        <li><a href="{{ @website.baseUrl }}#faq">FAQ</a></li>
+        <li><a href="{{ @website.baseUrl }}#contact" class="nav-cta">{{ @config.custom.navCtaLabel }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

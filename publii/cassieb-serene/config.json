@@ -1,0 +1,1263 @@
+{
+    "name": "Cassie B Therapy Serene",
+    "version": "1.0.0.0",
+    "author": "Cassie Broll",
+    "renderer": {
+        "create404page": true,
+        "createTagPages": true,
+        "createAuthorPages": true,
+        "createSearchPage": false,
+        "createTagsList": false,
+        "createContentStructure": false,
+        "renderPrevNextPosts": false,
+        "relatedPostsNumber": 0
+    },
+    "supportedFeatures": {
+        "blockEditor": true,
+        "errorPage": true,
+        "pages": true
+    },
+    "config": [
+        {
+            "name": "postsPerPage",
+            "label": "Posts per page (keep high so the homepage doesn't paginate)",
+            "value": 999,
+            "type": "number"
+        },
+        {
+            "name": "tagsPostsPerPage",
+            "label": "Tags posts per page",
+            "value": 12,
+            "type": "number"
+        },
+        {
+            "name": "authorsPostsPerPage",
+            "label": "Authors posts per page",
+            "value": 12,
+            "type": "number"
+        },
+        {
+            "name": "excerptLength",
+            "label": "Excerpt length (words)",
+            "value": 30,
+            "type": "number"
+        }
+    ],
+    "customConfig": [
+        {
+            "name": "navCtaLabel",
+            "label": "Header button label",
+            "group": "Basics",
+            "value": "Get in Touch",
+            "type": "text"
+        },
+        {
+            "name": "crisisLineNote",
+            "label": "Crisis note (shown in footer)",
+            "group": "Basics",
+            "value": "In crisis? Call or text",
+            "type": "text"
+        },
+        {
+            "name": "faviconUpload",
+            "label": "Upload favicon",
+            "group": "Basics",
+            "value": "",
+            "type": "smallupload",
+            "upload": true,
+            "note": "Optional. If empty, a soft blue circle icon is used."
+        },
+        {
+            "name": "heroEyebrow",
+            "label": "Small text above the headline",
+            "group": "Hero",
+            "value": "Individual & Couples Therapy · Minnesota",
+            "type": "text"
+        },
+        {
+            "name": "heroTitle",
+            "label": "Headline (main line)",
+            "group": "Hero",
+            "value": "Discover inner peace",
+            "type": "text"
+        },
+        {
+            "name": "heroTitleAccent",
+            "label": "Headline (soft second line, shown in italic serif)",
+            "group": "Hero",
+            "value": "a slower, softer kind of therapy for the kind folks of Minnesota",
+            "type": "text"
+        },
+        {
+            "name": "heroSubtitle",
+            "label": "Sub-headline paragraph",
+            "group": "Hero",
+            "value": "Individual and couples therapy, entirely online anywhere in Minnesota. Come as you are.",
+            "type": "textarea"
+        },
+        {
+            "name": "heroBtn1",
+            "label": "Primary button label (links to contact form)",
+            "group": "Hero",
+            "value": "Get in Touch",
+            "type": "text"
+        },
+        {
+            "name": "heroBtn2",
+            "label": "Secondary button label (links to About)",
+            "group": "Hero",
+            "value": "Meet Cassie",
+            "type": "text"
+        },
+        {
+            "name": "heroPhotoUrl",
+            "label": "Hero portrait photo URL",
+            "group": "Hero",
+            "value": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+            "type": "text",
+            "note": "Replace with your own portrait — upload a photo under Files and paste its URL here. The photo is shown in a circular crop."
+        },
+        {
+            "name": "heroPhotoAlt",
+            "label": "Hero portrait alt text (for screen readers)",
+            "group": "Hero",
+            "value": "Portrait of Cassie Broll, a licensed therapist in Minnesota",
+            "type": "text"
+        },
+        {
+            "name": "heroBadgeText",
+            "label": "Badge text (under the portrait)",
+            "group": "Hero",
+            "value": "Now accepting new clients",
+            "type": "text"
+        },
+        {
+            "name": "aboutEyebrow",
+            "label": "Small text above the bio",
+            "group": "About",
+            "value": "About me",
+            "type": "text"
+        },
+        {
+            "name": "aboutIntro",
+            "label": "Bio paragraph",
+            "group": "About",
+            "value": "Hello! I'm Cassie, a licensed therapist (but I'm guessing you already knew that if you made it to this page) practicing in Minnesota. I specialize in individual and couples therapy.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutShort",
+            "label": "Short homepage bio (the full bio lives on your About page)",
+            "group": "About",
+            "value": "I've always been fascinated by people — the stories we carry, the ways we learn to navigate relationships, and the parts of ourselves we sometimes feel we need to hide. I love helping individuals and couples explore those layers with curiosity, compassion, and a little humor along the way.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutDiveLabel",
+            "label": "Dive-deeper link text (leave empty to hide)",
+            "group": "About",
+            "value": "Read my full story →",
+            "type": "text"
+        },
+        {
+            "name": "aboutDiveUrl",
+            "label": "Dive-deeper link URL",
+            "group": "About",
+            "value": "/about/",
+            "type": "text",
+            "note": "Create a page in Publii (Pages → Add new page) with the slug 'about' and paste your full bio from the fields below, then this link works."
+        },
+        {
+            "name": "aboutP1",
+            "label": "Bio paragraph 1",
+            "group": "About",
+            "value": "I've always been fascinated by people. Have you ever been at a holiday dinner and watched a relative do something you'd never expect and wonder, Why do they do that? Chances are if you are human and have been alive for a while, you've asked that question about many people — even yourself. I ask that question all the time. Thankfully for me, there is a whole field dedicated to understanding human behavior. Even more thankfully, the work of therapy exists so we can understand not just human behavior, but all the complex facets that make us human — the stories we carry, the ways we learn to navigate relationships, and the parts of ourselves we sometimes feel we need to hide.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutP2",
+            "label": "Bio paragraph 2",
+            "group": "About",
+            "value": "That curiosity is a big part of what drew me to psychotherapy. I'm especially interested in the ways our experiences and relationships shape who we become, how we connect with others, and how we understand ourselves. I love helping individuals and couples explore those layers with curiosity, compassion, and a little humor along the way.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutP3",
+            "label": "Bio paragraph 3",
+            "group": "About",
+            "value": "I believe therapy, at its core, is about curiosity. It starts with asking questions, then being brave enough to find the answers we need. My goal for any client I sit with — whether individual or couple — is that you end our time together having more understanding of and compassion for yourself.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutWorkLinkPre",
+            "label": "Link to The Work — text before the link",
+            "group": "About",
+            "value": "To learn more about my approach to therapy and what happens in session, take a look at",
+            "type": "text"
+        },
+        {
+            "name": "aboutWorkLinkText",
+            "label": "Link to The Work — link text",
+            "group": "About",
+            "value": "The Work",
+            "type": "text"
+        },
+        {
+            "name": "aboutWorkLinkUrl",
+            "label": "Link to The Work — URL",
+            "group": "About",
+            "value": "#the-work",
+            "type": "text"
+        },
+        {
+            "name": "aboutPhotoUrl",
+            "label": "About photo URL",
+            "group": "About",
+            "value": "https://images.unsplash.com/photo-1543872084-c7bd3822856f?auto=format&fit=crop&w=800&q=80",
+            "type": "text",
+            "note": "Replace with your own photo — upload under Files and paste its URL here."
+        },
+        {
+            "name": "aboutCreds",
+            "label": "Credential cards",
+            "group": "About",
+            "type": "repeater",
+            "value": [
+                {
+                    "icon": "🎓",
+                    "title": "M.S. in Clinical Mental Health Counseling",
+                    "subtitle": "Minnesota"
+                },
+                {
+                    "icon": "📜",
+                    "title": "MN License #cc04877",
+                    "subtitle": "Licensed in Minnesota"
+                },
+                {
+                    "icon": "🪴",
+                    "title": "Now accepting new clients",
+                    "subtitle": "Online across Minnesota"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a credential card",
+                "duplicateItem": "Duplicate card",
+                "removeItem": "Remove card",
+                "emptyState": "Click the button to add your first credential card"
+            },
+            "structure": [
+                {
+                    "name": "icon",
+                    "label": "Icon (emoji)",
+                    "type": "text",
+                    "value": "",
+                    "width": 20
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                },
+                {
+                    "name": "subtitle",
+                    "label": "Subtitle",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                }
+            ]
+        },
+        {
+            "name": "workEyebrow",
+            "label": "Small text above the title",
+            "group": "The Work",
+            "value": "My approach",
+            "type": "text"
+        },
+        {
+            "name": "workTitle",
+            "label": "Section title",
+            "group": "The Work",
+            "value": "The Work",
+            "type": "text"
+        },
+        {
+            "name": "workP1",
+            "label": "The Work — paragraph 1",
+            "group": "The Work",
+            "value": "I use the word work intentionally here. Therapy is many things, and effortful is one of them. It is not easy to sit in places inside ourselves and in emotions we try hard to avoid, to look at things we usually turn away from, to talk with our partner about a topic that has somehow in some unspoken way become off limits.",
+            "type": "textarea"
+        },
+        {
+            "name": "workP2",
+            "label": "The Work — paragraph 2",
+            "group": "The Work",
+            "value": "It's hard to believe that a process that is often described with words like healing, holding space, journey, discovery, growth can also be associated with tears, fear, anxiety, sadness, and grief. Ah, the human experience — full of paradoxes and complexity. Thank goodness I love both of those things!",
+            "type": "textarea"
+        },
+        {
+            "name": "workApproachesIntro",
+            "label": "Approaches intro paragraph",
+            "group": "The Work",
+            "value": "I pull from a few different theories in my practice. Most notably, I take a narrative, psychodynamic, and somatic approach to therapy, all through an attachment framework. If you read that and are thinking, What on earth does that mean?! Awesome. Look at you, already asking great questions! Here's a little more about what each of those approaches means and how they might show up in our work together.",
+            "type": "textarea"
+        },
+        {
+            "name": "workApproaches",
+            "label": "Theory approaches",
+            "group": "The Work",
+            "type": "repeater",
+            "value": [
+                {
+                    "name": "Narrative",
+                    "text": "The stories we tell ourselves are powerful. We all have stories about who we are, how the world works, and what we can expect from others. Some of those stories come from our families, our experiences, and the cultures we're part of. Together, we'll get curious about the stories you've been carrying, where they came from, and whether they're still serving you."
+                },
+                {
+                    "name": "Psychodynamic",
+                    "text": "Our early experiences matter. Some of our work will involve exploring your early experiences, family of origin, and the ways those experiences continue to shape how you relate to yourself and others. We'll also pay attention to the emotions, expectations, and relational patterns that emerge in the therapy room itself. Sometimes, what happens between us can offer valuable insight into what happens in other relationships."
+                },
+                {
+                    "name": "Somatic",
+                    "text": "Our body holds important knowledge and we need to be able to connect to it. What are you feeling in your body? Can you sense it? What happens in your body when you're overwhelmed, anxious, or triggered? Our bodies hold experiences and information that we don't always have words for. Through a somatic lens, we'll make room for that knowledge and explore how your nervous system responds to the world around you."
+                },
+                {
+                    "name": "Attachment",
+                    "text": "Our relationships matter. This is the framework at the heart of my work. At its core is a simple but important idea: our relationships matter. The ways we've experienced connection, safety, and belonging shape how we understand ourselves and how we show up with others. And this doesn't stop with our early relationships — our partnerships, friendships, and even work relationships continue to influence us."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add an approach",
+                "duplicateItem": "Duplicate",
+                "removeItem": "Remove",
+                "emptyState": "Click the button to add your first approach"
+            },
+            "structure": [
+                {
+                    "name": "name",
+                    "label": "Approach name",
+                    "type": "text",
+                    "value": "",
+                    "width": 30
+                },
+                {
+                    "name": "text",
+                    "label": "Description",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 70,
+                    "rows": 5
+                }
+            ]
+        },
+        {
+            "name": "workQuestions",
+            "label": "Exploration questions paragraph",
+            "group": "The Work",
+            "value": "Who have you learned you need to be in order to feel loved or accepted? What do you believe others expect of you? Do you find yourself performing, placating, withdrawing, or pushing others away when relationships feel difficult? What happens when you need something from someone else? These are just some of the questions we might explore together.",
+            "type": "textarea"
+        },
+        {
+            "name": "workDiveLabel",
+            "label": "Dive-deeper link text (leave empty to hide)",
+            "group": "The Work",
+            "value": "Explore how each approach might show up in our work together →",
+            "type": "text"
+        },
+        {
+            "name": "workDiveUrl",
+            "label": "Dive-deeper link URL",
+            "group": "The Work",
+            "value": "/the-work/",
+            "type": "text",
+            "note": "Create a page in Publii with the slug 'the-work' and paste the approach cards, questions, and beliefs from the fields below."
+        },
+        {
+            "name": "nutsBoltsEyebrow",
+            "label": "Small text above the title",
+            "group": "Nuts & Bolts",
+            "value": "Credentials",
+            "type": "text"
+        },
+        {
+            "name": "nutsBoltsTitle",
+            "label": "Section title",
+            "group": "Nuts & Bolts",
+            "value": "Nuts & Bolts and Alphabet Soup",
+            "type": "text"
+        },
+        {
+            "name": "nutsBoltsLicense",
+            "label": "License line",
+            "group": "Nuts & Bolts",
+            "value": "MN License #cc04877",
+            "type": "text"
+        },
+        {
+            "name": "nutsBoltsDegree",
+            "label": "Degree line",
+            "group": "Nuts & Bolts",
+            "value": "M.S. in Clinical Mental Health Counseling",
+            "type": "text"
+        },
+        {
+            "name": "nutsBoltsTrainingsLabel",
+            "label": "Trainings list title",
+            "group": "Nuts & Bolts",
+            "value": "Relevant Trainings",
+            "type": "text"
+        },
+        {
+            "name": "nutsBoltsTrainings",
+            "label": "Relevant trainings",
+            "group": "Nuts & Bolts",
+            "type": "repeater",
+            "value": [
+                {
+                    "title": "Attachment, Regulation, and Competency (ARC)"
+                },
+                {
+                    "title": "EMDR Level 1"
+                },
+                {
+                    "title": "Brainspotting Level 1"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a training",
+                "duplicateItem": "Duplicate",
+                "removeItem": "Remove",
+                "emptyState": "Click the button to add your first training"
+            },
+            "structure": [
+                {
+                    "name": "title",
+                    "label": "Training",
+                    "type": "text",
+                    "value": "",
+                    "width": 100
+                }
+            ]
+        },
+        {
+            "name": "nutsBoltsCouplesLabel",
+            "label": "Couples list title",
+            "group": "Nuts & Bolts",
+            "value": "Couples",
+            "type": "text"
+        },
+        {
+            "name": "nutsBoltsCouples",
+            "label": "Couples trainings",
+            "group": "Nuts & Bolts",
+            "type": "repeater",
+            "value": [
+                {
+                    "title": "Emotionally Focused Couples Therapy Externship"
+                },
+                {
+                    "title": "Level 1 Gottman Method Couples Therapy"
+                },
+                {
+                    "title": "Difficult Couples Training"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a training",
+                "duplicateItem": "Duplicate",
+                "removeItem": "Remove",
+                "emptyState": "Click the button to add your first training"
+            },
+            "structure": [
+                {
+                    "name": "title",
+                    "label": "Training",
+                    "type": "text",
+                    "value": "",
+                    "width": 100
+                }
+            ]
+        },
+        {
+            "name": "nutsBoltsLearnerNote",
+            "label": "Closing note",
+            "group": "Nuts & Bolts",
+            "value": "I'm also a perennial learner and regularly attend trainings, supervision, and consult groups.",
+            "type": "textarea"
+        },
+        {
+            "name": "workBeliefsLabel",
+            "label": "Beliefs — intro label",
+            "group": "The Work",
+            "value": "A few of my beliefs in therapy:",
+            "type": "text"
+        },
+        {
+            "name": "workBeliefs",
+            "label": "Beliefs list",
+            "group": "The Work",
+            "type": "repeater",
+            "value": [
+                {
+                    "text": "I believe the process of getting to know ourselves, meeting all parts of ourselves and our stories with compassion, and bringing all we are to our relationships in an authentic, intimate way is one of the most rewarding things we will ever do in life."
+                },
+                {
+                    "text": "I believe therapy is sacred work."
+                },
+                {
+                    "text": "I believe we need humor in life and also the therapy room."
+                },
+                {
+                    "text": "I believe that when our relationship with our partner feels secure, loving and embracing we can face almost anything in life. When our relationship feels like we're walking on eggshells and covered in tension, the rest of our lives feels like crap too."
+                },
+                {
+                    "text": "I believe that people are complex and inherently good."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a belief",
+                "duplicateItem": "Duplicate belief",
+                "removeItem": "Remove belief",
+                "emptyState": "Click the button to add your first belief"
+            },
+            "structure": [
+                {
+                    "name": "text",
+                    "label": "Belief",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 100,
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "name": "specialtiesEyebrow",
+            "label": "Small text above the title",
+            "group": "Specialties",
+            "value": "Specialties",
+            "type": "text"
+        },
+        {
+            "name": "specialtiesTitle",
+            "label": "Section title",
+            "group": "Specialties",
+            "value": "How I can help",
+            "type": "text"
+        },
+        {
+            "name": "specialtiesLead",
+            "label": "Section intro",
+            "group": "Specialties",
+            "value": "Individual and couples therapy — with plenty of room for the hard conversations.",
+            "type": "textarea"
+        },
+        {
+            "name": "specialtyCards",
+            "label": "Specialty cards",
+            "group": "Specialties",
+            "type": "repeater",
+            "value": [
+                {
+                    "icon": "🕊️",
+                    "title": "Individual Therapy",
+                    "text": "Getting to know yourself, meeting all parts of yourself and your story with compassion, and bringing all you are to your relationships in an authentic, intimate way — one of the most rewarding things you'll ever do."
+                },
+                {
+                    "icon": "💞",
+                    "title": "Couples Therapy",
+                    "text": "When your relationship feels secure, loving, and embracing, you can face almost anything in life. When it feels like walking on eggshells and covered in tension, the rest of life feels that way too."
+                },
+                {
+                    "icon": "💬",
+                    "title": "The Hard Conversations",
+                    "text": "The topic that has somehow, in some unspoken way, become off-limits. Therapy is a place to sit down with it — gently, honestly, and together."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a specialty card",
+                "duplicateItem": "Duplicate card",
+                "removeItem": "Remove card",
+                "emptyState": "Click the button to add your first specialty card"
+            },
+            "structure": [
+                {
+                    "name": "icon",
+                    "label": "Icon (emoji)",
+                    "type": "text",
+                    "value": "",
+                    "width": 15
+                },
+                {
+                    "name": "title",
+                    "label": "Title",
+                    "type": "text",
+                    "value": "",
+                    "width": 35
+                },
+                {
+                    "name": "text",
+                    "label": "Text",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 50,
+                    "rows": 4
+                }
+            ]
+        },
+        {
+            "name": "resonateEyebrow",
+            "label": "Small text above the title",
+            "group": "Resonate",
+            "value": "Take a breath",
+            "type": "text"
+        },
+        {
+            "name": "resonateTitle",
+            "label": "Section title",
+            "group": "Resonate",
+            "value": "Do any of these resonate?",
+            "type": "text"
+        },
+        {
+            "name": "resonateItems",
+            "label": "Checklist items",
+            "group": "Resonate",
+            "type": "repeater",
+            "value": [
+                {
+                    "text": "You have stories you'd rather stuff down and never think about"
+                },
+                {
+                    "text": "You keep finding yourself stuck in the same patterns"
+                },
+                {
+                    "text": "You've been placing everyone's needs above your own"
+                },
+                {
+                    "text": "You want to change but the change never seems to last"
+                },
+                {
+                    "text": "Your anxiety is taking all the joy and fun out of life"
+                },
+                {
+                    "text": "Your body feels tense and tight all the time"
+                },
+                {
+                    "text": "You want to show up differently than your parents did"
+                },
+                {
+                    "text": "You feel like you 'should' be further along by now"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a checklist item",
+                "duplicateItem": "Duplicate item",
+                "removeItem": "Remove item",
+                "emptyState": "Click the button to add your first checklist item"
+            },
+            "structure": [
+                {
+                    "name": "text",
+                    "label": "Item text",
+                    "type": "text",
+                    "value": "",
+                    "width": 100
+                }
+            ]
+        },
+        {
+            "name": "resonateNote",
+            "label": "Closing line under the checklist",
+            "group": "Resonate",
+            "value": "Great news — welcome to being human.",
+            "type": "text"
+        },
+        {
+            "name": "booksEyebrow",
+            "label": "Small text above the title",
+            "group": "Bookshelf",
+            "value": "Bookshelf",
+            "type": "text"
+        },
+        {
+            "name": "booksTitle",
+            "label": "Section title",
+            "group": "Bookshelf",
+            "value": "The fastest way to get to know a person",
+            "type": "text"
+        },
+        {
+            "name": "booksIntro",
+            "label": "Section intro",
+            "group": "Bookshelf",
+            "value": "I have always believed one of the fastest ways to get to know a person is to look at their bookshelf. I love to read! Admittedly, I mostly read nonfiction after high school, but have gotten back into fiction in the last few years. If reading interests you, or you are wondering what books I recommend to clients, take a look around.",
+            "type": "textarea"
+        },
+        {
+            "name": "booksDiveLabel",
+            "label": "Dive-deeper link text (leave empty to hide)",
+            "group": "Bookshelf",
+            "value": "Browse the full bookshelf →",
+            "type": "text"
+        },
+        {
+            "name": "booksDiveUrl",
+            "label": "Dive-deeper link URL",
+            "group": "Bookshelf",
+            "value": "/bookshelf/",
+            "type": "text",
+            "note": "Create a page in Publii with the slug 'bookshelf' and paste your three book lists from the repeaters below."
+        },
+        {
+            "name": "booksCurrentlyTitle",
+            "label": "Currently-reading list title",
+            "group": "Bookshelf",
+            "value": "Currently Reading",
+            "type": "text"
+        },
+        {
+            "name": "booksCurrently",
+            "label": "Currently reading",
+            "group": "Bookshelf",
+            "type": "repeater",
+            "value": [
+                {
+                    "title": "Dungeon Crawler Carl series (on book 5!)",
+                    "coverUrl": "/assets/images/books/dungeon-crawler-carl-book-5.jpg"
+                },
+                {
+                    "title": "The Mother Dance",
+                    "coverUrl": "/assets/images/books/the-mother-dance.jpg"
+                },
+                {
+                    "title": "The Danish Way of Education",
+                    "coverUrl": ""
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a book",
+                "duplicateItem": "Duplicate",
+                "removeItem": "Remove",
+                "emptyState": "Click the button to add your first book"
+            },
+            "structure": [
+                {
+                    "name": "title",
+                    "label": "Book",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                },
+                {
+                    "name": "coverUrl",
+                    "label": "Cover image URL",
+                    "type": "text",
+                    "value": "",
+                    "width": 35,
+                    "note": "Optional — shown when building your Bookshelf page"
+                }
+            ]
+        },
+        {
+            "name": "booksList1Title",
+            "label": "List 1 title",
+            "group": "Bookshelf",
+            "value": "Books I recommend to clients",
+            "type": "text"
+        },
+        {
+            "name": "booksList1",
+            "label": "List 1 — recommended to clients",
+            "group": "Bookshelf",
+            "type": "repeater",
+            "value": [
+                {
+                    "title": "The Dance of Anger",
+                    "authorName": "Harriet Lerner",
+                    "coverUrl": "/assets/images/books/the-dance-of-anger.jpg"
+                },
+                {
+                    "title": "Mating in Captivity",
+                    "authorName": "Esther Perel",
+                    "coverUrl": "/assets/images/books/mating-in-captivity.jpg"
+                },
+                {
+                    "title": "The State of Affairs",
+                    "authorName": "Esther Perel",
+                    "coverUrl": "/assets/images/books/the-state-of-affairs.jpg"
+                },
+                {
+                    "title": "Hold Me Tight",
+                    "authorName": "Sue Johnson",
+                    "coverUrl": "/assets/images/books/hold-me-tight.jpg"
+                },
+                {
+                    "title": "Untamed",
+                    "authorName": "Glennon Doyle",
+                    "coverUrl": "/assets/images/books/untamed.jpg"
+                },
+                {
+                    "title": "Will I Ever Be Good Enough?",
+                    "authorName": "Karyl McBride",
+                    "coverUrl": "/assets/images/books/will-i-ever-be-good-enough.jpg"
+                },
+                {
+                    "title": "The Gifts of Imperfection",
+                    "authorName": "Brené Brown",
+                    "coverUrl": "/assets/images/books/the-gifts-of-imperfection.jpg"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a book",
+                "duplicateItem": "Duplicate book",
+                "removeItem": "Remove book",
+                "emptyState": "Click the button to add your first book"
+            },
+            "structure": [
+                {
+                    "name": "title",
+                    "label": "Book title",
+                    "type": "text",
+                    "value": "",
+                    "width": 55
+                },
+                {
+                    "name": "authorName",
+                    "label": "Author",
+                    "type": "text",
+                    "value": "",
+                    "width": 45
+                },
+                {
+                    "name": "coverUrl",
+                    "label": "Cover image URL",
+                    "type": "text",
+                    "value": "",
+                    "width": 35,
+                    "note": "Optional — shown when building your Bookshelf page"
+                }
+            ]
+        },
+        {
+            "name": "booksList2Title",
+            "label": "List 2 title",
+            "group": "Bookshelf",
+            "value": "Books that informed my practice",
+            "type": "text"
+        },
+        {
+            "name": "booksList2",
+            "label": "List 2 — informed my practice",
+            "group": "Bookshelf",
+            "type": "repeater",
+            "value": [
+                {
+                    "title": "The Body Keeps the Score",
+                    "authorName": "Bessel van der Kolk",
+                    "coverUrl": "/assets/images/books/the-body-keeps-the-score.jpg"
+                },
+                {
+                    "title": "Mating in Captivity",
+                    "authorName": "Esther Perel",
+                    "coverUrl": "/assets/images/books/mating-in-captivity.jpg"
+                },
+                {
+                    "title": "The State of Affairs",
+                    "authorName": "Esther Perel",
+                    "coverUrl": "/assets/images/books/the-state-of-affairs.jpg"
+                },
+                {
+                    "title": "Hold Me Tight",
+                    "authorName": "Sue Johnson",
+                    "coverUrl": "/assets/images/books/hold-me-tight.jpg"
+                },
+                {
+                    "title": "Untamed",
+                    "authorName": "Glennon Doyle",
+                    "coverUrl": "/assets/images/books/untamed.jpg"
+                },
+                {
+                    "title": "The Dance of Anger",
+                    "authorName": "Harriet Lerner",
+                    "coverUrl": "/assets/images/books/the-dance-of-anger.jpg"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a book",
+                "duplicateItem": "Duplicate book",
+                "removeItem": "Remove book",
+                "emptyState": "Click the button to add your first book"
+            },
+            "structure": [
+                {
+                    "name": "title",
+                    "label": "Book title",
+                    "type": "text",
+                    "value": "",
+                    "width": 55
+                },
+                {
+                    "name": "authorName",
+                    "label": "Author",
+                    "type": "text",
+                    "value": "",
+                    "width": 45
+                },
+                {
+                    "name": "coverUrl",
+                    "label": "Cover image URL",
+                    "type": "text",
+                    "value": "",
+                    "width": 35,
+                    "note": "Optional — shown when building your Bookshelf page"
+                }
+            ]
+        },
+        {
+            "name": "stepsEyebrow",
+            "label": "Small text above the title",
+            "group": "Getting started",
+            "value": "Ready when you are",
+            "type": "text"
+        },
+        {
+            "name": "stepsTitle",
+            "label": "Section title",
+            "group": "Getting started",
+            "value": "Getting started is simple",
+            "type": "text"
+        },
+        {
+            "name": "stepsLead",
+            "label": "Section intro",
+            "group": "Getting started",
+            "value": "Three gentle steps — no pressure at any of them.",
+            "type": "textarea"
+        },
+        {
+            "name": "stepsItems",
+            "label": "Steps (numbered automatically)",
+            "group": "Getting started",
+            "type": "repeater",
+            "value": [
+                {
+                    "title": "Get in touch",
+                    "text": "Answer a few questions about yourself. You'll get a warm reply within 1–2 business days."
+                },
+                {
+                    "title": "Free consult",
+                    "text": "We'll have a 15–20 minute video call so you can see if we're the right fit and ask any questions."
+                },
+                {
+                    "title": "Begin your journey",
+                    "text": "We'll pick a day for your first session, and you'll begin the work — at a pace that feels kind."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a step",
+                "duplicateItem": "Duplicate step",
+                "removeItem": "Remove step",
+                "emptyState": "Click the button to add the first step"
+            },
+            "structure": [
+                {
+                    "name": "title",
+                    "label": "Step title",
+                    "type": "text",
+                    "value": "",
+                    "width": 30
+                },
+                {
+                    "name": "text",
+                    "label": "Step text",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 70,
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "name": "blogEyebrow",
+            "label": "Small text above the title",
+            "group": "Blog section",
+            "value": "Notes & resources",
+            "type": "text"
+        },
+        {
+            "name": "blogTitle",
+            "label": "Section title",
+            "group": "Blog section",
+            "value": "From the blog",
+            "type": "text"
+        },
+        {
+            "name": "blogLead",
+            "label": "Section intro",
+            "group": "Blog section",
+            "value": "Occasional notes on therapy, relationships, and the messy, wonderful work of being human.",
+            "type": "textarea"
+        },
+        {
+            "name": "faqEyebrow",
+            "label": "Small text above the title",
+            "group": "FAQ",
+            "value": "Good to know",
+            "type": "text"
+        },
+        {
+            "name": "faqTitle",
+            "label": "Section title",
+            "group": "FAQ",
+            "value": "Common questions",
+            "type": "text"
+        },
+        {
+            "name": "faqIntro",
+            "label": "Intro text (beside the questions)",
+            "group": "FAQ",
+            "value": "Starting therapy brings up a lot of questions — that's more than okay. Here are the ones I hear most often.",
+            "type": "textarea"
+        },
+        {
+            "name": "faqItems",
+            "label": "Questions & answers",
+            "group": "FAQ",
+            "type": "repeater",
+            "value": [
+                {
+                    "question": "How long is each session?",
+                    "answer": "Standard sessions are 50 minutes. Extended 80-minute sessions are available if we decide that's right for you."
+                },
+                {
+                    "question": "Do you accept insurance?",
+                    "answer": "I'm an out-of-network provider. I'll provide a monthly superbill you can submit to your insurer for potential reimbursement. I'm glad to help you check your benefits before we begin."
+                },
+                {
+                    "question": "What are your rates?",
+                    "answer": "Individual and couples sessions are both $175. A limited number of sliding-scale slots are available — please don't hesitate to ask."
+                },
+                {
+                    "question": "How does online therapy work?",
+                    "answer": "All sessions are held online via a secure, HIPAA-compliant video platform — from wherever you feel most comfortable, anywhere in Minnesota."
+                },
+                {
+                    "question": "How do I know if we're a good fit?",
+                    "answer": "That's exactly what the free 15–20 minute consultation is for. It's a low-pressure conversation to see if my style and approach feel right for you. If not, I'm glad to offer referrals."
+                },
+                {
+                    "question": "Is everything confidential?",
+                    "answer": "Yes. Your privacy is protected by law and by my own ethical commitment. The only exceptions are standard legal duties around imminent harm, which we'll discuss in our first session."
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a question",
+                "duplicateItem": "Duplicate question",
+                "removeItem": "Remove question",
+                "emptyState": "Click the button to add your first question"
+            },
+            "structure": [
+                {
+                    "name": "question",
+                    "label": "Question",
+                    "type": "text",
+                    "value": "",
+                    "width": 35
+                },
+                {
+                    "name": "answer",
+                    "label": "Answer",
+                    "type": "textarea",
+                    "value": "",
+                    "width": 65,
+                    "rows": 4
+                }
+            ]
+        },
+        {
+            "name": "closingEyebrow",
+            "label": "Small text above the title",
+            "group": "Closing",
+            "value": "One small step",
+            "type": "text"
+        },
+        {
+            "name": "closingTitle",
+            "label": "Section title",
+            "group": "Closing",
+            "value": "Reaching out is a big deal.",
+            "type": "text"
+        },
+        {
+            "name": "closingText",
+            "label": "Section text",
+            "group": "Closing",
+            "value": "If you're in Minnesota and looking for online individual or couples therapy, I'd be honored to hear from you. Schedule a free 20-minute consult below. I'm looking forward to connecting with you soon.",
+            "type": "textarea"
+        },
+        {
+            "name": "closingBtnLabel",
+            "label": "Button label",
+            "group": "Closing",
+            "value": "Schedule a Free Consult",
+            "type": "text"
+        },
+        {
+            "name": "contactEyebrow",
+            "label": "Small text above the title",
+            "group": "Contact",
+            "value": "Get in touch",
+            "type": "text"
+        },
+        {
+            "name": "contactTitle",
+            "label": "Section title",
+            "group": "Contact",
+            "value": "Say hello",
+            "type": "text"
+        },
+        {
+            "name": "contactText",
+            "label": "Section intro",
+            "group": "Contact",
+            "value": "Send a brief note and I'll personally reply within 1–2 business days. Whatever you share is held with care.",
+            "type": "textarea"
+        },
+        {
+            "name": "contactEmail",
+            "label": "Email address",
+            "group": "Contact",
+            "value": "cassie@cassiebtherapy.com",
+            "type": "text",
+            "note": "Placeholder — replace with your real email."
+        },
+        {
+            "name": "contactPhone",
+            "label": "Phone number",
+            "group": "Contact",
+            "value": "(952) 555-0100",
+            "type": "text",
+            "note": "Placeholder — replace with your real phone number."
+        },
+        {
+            "name": "contactOffice",
+            "label": "Office line",
+            "group": "Contact",
+            "value": "Minnesota · online sessions",
+            "type": "text"
+        },
+        {
+            "name": "contactHours",
+            "label": "Hours line",
+            "group": "Contact",
+            "value": "By appointment · Telehealth across MN",
+            "type": "text"
+        },
+        {
+            "name": "contactFormEndpoint",
+            "label": "Contact form endpoint (Formspree)",
+            "group": "Contact",
+            "value": "",
+            "type": "text",
+            "note": "Recommended: create a free form at formspree.io, then paste the endpoint URL (looks like https://formspree.io/f/xxxxxxx) here. If left empty, the form falls back to opening the visitor's email app."
+        },
+        {
+            "name": "footerTagline",
+            "label": "Footer tagline",
+            "group": "Footer",
+            "value": "Individual & couples therapy in Minnesota — entirely online. A slower, softer kind of care.",
+            "type": "textarea"
+        },
+        {
+            "name": "footerGivingText",
+            "label": "Giving note (first part)",
+            "group": "Footer",
+            "value": "A portion of all session fees is donated to",
+            "type": "text"
+        },
+        {
+            "name": "footerGivingUrl",
+            "label": "Giving note (link URL)",
+            "group": "Footer",
+            "value": "https://thelovelandfoundation.org",
+            "type": "text"
+        },
+        {
+            "name": "footerGivingLinkLabel",
+            "label": "Giving note (link text)",
+            "group": "Footer",
+            "value": "The Loveland Foundation",
+            "type": "text"
+        },
+        {
+            "name": "footerLegalLinks",
+            "label": "Legal links",
+            "group": "Footer",
+            "type": "repeater",
+            "value": [
+                {
+                    "label": "Privacy Policy",
+                    "url": "#"
+                },
+                {
+                    "label": "Good Faith Estimate",
+                    "url": "#"
+                },
+                {
+                    "label": "Notice of Privacy Practices",
+                    "url": "#"
+                }
+            ],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a link",
+                "duplicateItem": "Duplicate link",
+                "removeItem": "Remove link",
+                "emptyState": "Click the button to add your first link"
+            },
+            "structure": [
+                {
+                    "name": "label",
+                    "label": "Link text",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                },
+                {
+                    "name": "url",
+                    "label": "URL",
+                    "type": "text",
+                    "value": "",
+                    "width": 60
+                }
+            ]
+        }
+    ]
+}
