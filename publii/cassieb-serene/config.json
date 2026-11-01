@@ -142,14 +142,21 @@
             "name": "aboutIntro",
             "label": "Bio paragraph",
             "group": "About",
-            "value": "Hello! I'm Cassie, a licensed therapist (but I'm guessing you already knew that if you made it to this page) practicing in Minnesota. I specialize in individual and couples therapy.",
+            "value": "Hi there!",
             "type": "textarea"
         },
         {
             "name": "aboutShort",
             "label": "Short homepage bio (the full bio lives on your About page)",
             "group": "About",
-            "value": "I've always been fascinated by people — the stories we carry, the ways we learn to navigate relationships, and the parts of ourselves we sometimes feel we need to hide. I love helping individuals and couples explore those layers with curiosity, compassion, and a little humor along the way.",
+            "value": "I'm Cassie, a licensed therapist who is endlessly curious about people, relationships, and what makes us who we are. My work is grounded in the belief that our experiences and relationships shape how we see ourselves and move through the world. I'm particularly interested in helping individuals and couples better understand those patterns, make room for the parts of themselves they may have learned to hide, and build deeper, more meaningful connections.",
+            "type": "textarea"
+        },
+        {
+            "name": "aboutShort2",
+            "label": "Short homepage bio (paragraph 2)",
+            "group": "About",
+            "value": "I believe therapy can hold both depth and lightness. It's a place for honesty, vulnerability, and sometimes a little laughter, too. My approach is thoughtful, relational, and collaborative, with room for curiosity, compassion, and the complexities of being human. I'm glad you're here.",
             "type": "textarea"
         },
         {

@@ -27,7 +27,7 @@ Publii conventions, completely different look. Install one or the other
 |---|---|
 | Hero headline, second line, subtitle, buttons, **your portrait photo** | **Hero** |
 | Header button label, crisis note, favicon | **Basics** |
-| Short homepage bio + "Read my full story" link; the four full-bio paragraphs below it are kept for pasting onto your About page | **About** |
+| Short homepage bio (greeting + two paragraphs) + "Read my full story" link; the four full-bio paragraphs below it are kept for pasting onto your About page | **About** |
 | "The Work" paragraphs + the dive-deeper link on the homepage; the approach cards, questions & 5 beliefs below are kept for pasting onto your The Work page | **The Work** |
 | License number, degree, training lists (ARC, EMDR, Brainspotting, EFT, Gottman…) | **Nuts & Bolts** |
 | Specialty cards (Individual / Couples) | **Specialties** |
