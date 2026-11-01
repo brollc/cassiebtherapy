@@ -178,11 +178,6 @@ p { margin: 0 0 1em; }
   color: var(--clay); margin-bottom: 1.2em;
 }
 .hero-title { margin-bottom: 0.5em; }
-.hero-title .hl { position: relative; color: var(--leaf); white-space: nowrap; }
-.hero-title .hl::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 10px;
-  background: rgba(230, 200, 122, 0.5); z-index: -1; border-radius: 999px;
-}
 .hero-subtitle { font-size: 1.12rem; color: var(--ink-soft); margin-bottom: 2em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
@@ -709,7 +704,6 @@ p { margin: 0 0 1em; }
   .hero { padding: 56px 0 110px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
-  .hero-title .hl { white-space: normal; }
   .hero-art-badge { right: 0; }
   .steps-grid, .specialties-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }

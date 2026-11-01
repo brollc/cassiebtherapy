@@ -85,14 +85,14 @@
             "name": "heroTitle",
             "label": "Headline (first part)",
             "group": "Hero",
-            "value": "A slower, softer kind of therapy for the kind folks of",
+            "value": "Integrative, holistic psychotherapy",
             "type": "text"
         },
         {
             "name": "heroHighlight",
-            "label": "Headline (highlighted word)",
+            "label": "Headline (highlighted word, optional)",
             "group": "Hero",
-            "value": "Minnesota",
+            "value": "",
             "type": "text"
         },
         {
