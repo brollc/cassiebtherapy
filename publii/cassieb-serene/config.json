@@ -113,7 +113,7 @@
             "name": "heroPhotoUrl",
             "label": "Hero portrait photo URL",
             "group": "Hero",
-            "value": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+            "value": "/assets/images/cassie-headshot.jpg",
             "type": "text",
             "note": "Replace with your own portrait — upload a photo under Files and paste its URL here. The photo is shown in a circular crop."
         },
@@ -228,7 +228,7 @@
             "name": "aboutPhotoUrl",
             "label": "About photo URL",
             "group": "About",
-            "value": "https://images.unsplash.com/photo-1543872084-c7bd3822856f?auto=format&fit=crop&w=800&q=80",
+            "value": "/assets/images/cassie-headshot.jpg",
             "type": "text",
             "note": "Replace with your own photo — upload under Files and paste its URL here."
         },

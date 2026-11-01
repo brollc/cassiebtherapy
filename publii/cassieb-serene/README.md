@@ -91,10 +91,10 @@ Static sites can't process forms by themselves, so:
 - [ ] **Email** — Contact tab has `cassie@cassiebtherapy.com`; confirm it works.
       (The phone number was removed from the site per your preference — contact
       is by email and the form only.)
-- [ ] **Your portrait** — the Hero tab's photo URL points at a placeholder
-      Unsplash portrait. Upload your own photo under **Files** and paste its
-      URL (the Hero / About / Locations photo URLs are all editable text
-      fields). A real face builds trust — please use yours!
+- [x] **Your portrait** — done! Your headshot (`cassie-headshot.jpg`) is bundled
+      with the theme and used for both the Hero and About photos. Swap it anytime
+      by uploading a new photo under **Files** and updating the photo URL fields
+      in the Hero and About tabs.
 - [ ] **Legal pages** — the footer's Privacy Policy / Good Faith Estimate /
       Notice of Privacy Practices links currently point to `#`; create those
       pages and paste their URLs in the **Footer** tab.
