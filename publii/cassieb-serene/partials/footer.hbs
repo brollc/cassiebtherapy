@@ -12,16 +12,6 @@
         <span class="logo-text">{{ @website.name }}</span>
       </a>
       <p class="footer-tagline">{{ @config.custom.footerTagline }}</p>
-      {{#if @config.custom.footerGivingText}}
-      <p class="footer-giving">
-        {{ @config.custom.footerGivingText }}
-        {{#if @config.custom.footerGivingUrl}}
-          <a href="{{ @config.custom.footerGivingUrl }}" target="_blank" rel="noopener">{{ @config.custom.footerGivingLinkLabel }}</a>
-        {{else}}
-          {{ @config.custom.footerGivingLinkLabel }}
-        {{/if}}
-      </p>
-      {{/if}}
     </div>
 
     <nav class="footer-nav" aria-label="Footer">

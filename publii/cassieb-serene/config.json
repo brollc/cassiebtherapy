@@ -886,14 +886,14 @@
             "name": "stepsTitle",
             "label": "Section title",
             "group": "Getting started",
-            "value": "Getting started is simple",
+            "value": "From first hello to first session",
             "type": "text"
         },
         {
             "name": "stepsLead",
             "label": "Section intro",
             "group": "Getting started",
-            "value": "Three gentle steps — no pressure at any of them.",
+            "value": "Reaching out is often the hardest step. Here's how simple the rest of it is.",
             "type": "textarea"
         },
         {
@@ -904,15 +904,15 @@
             "value": [
                 {
                     "title": "Get in touch",
-                    "text": "Answer a few questions about yourself. You'll get a warm reply within 1–2 business days."
+                    "text": "Send a note through the form below and share as much or as little as you like. I'll reply personally, usually within a day or two."
                 },
                 {
                     "title": "Free consult",
-                    "text": "We'll have a 15–20 minute video call so you can see if we're the right fit and ask any questions."
+                    "text": "We'll spend 15–20 minutes on a relaxed video call — a chance to see how it feels to talk together and ask anything on your mind."
                 },
                 {
-                    "title": "Begin your journey",
-                    "text": "We'll pick a day for your first session, and you'll begin the work — at a pace that feels kind."
+                    "title": "Begin the work",
+                    "text": "If it feels like a fit, we'll pick a regular time to meet and get started. You've already done the hardest part."
                 }
             ],
             "maxCount": -1,
@@ -1058,7 +1058,7 @@
             "name": "closingText",
             "label": "Section text",
             "group": "Closing",
-            "value": "If you're in Minnesota and looking for online individual or couples therapy, I'd be honored to hear from you. Schedule a free 20-minute consult below. I'm looking forward to connecting with you soon.",
+            "value": "Whether you've been thinking about this for a long time or only started wondering, you're welcome here. Whenever you're ready, send a note below and we'll find a time to talk.",
             "type": "textarea"
         },
         {
@@ -1079,7 +1079,7 @@
             "name": "contactTitle",
             "label": "Section title",
             "group": "Contact",
-            "value": "Say hello",
+            "value": "I'd love to hear your story",
             "type": "text"
         },
         {
@@ -1131,29 +1131,8 @@
             "name": "footerTagline",
             "label": "Footer tagline",
             "group": "Footer",
-            "value": "Individual & couples therapy in Minnesota — entirely online. A slower, softer kind of care.",
+            "value": "Individual & couples therapy in Minnesota — with curiosity, compassion, and a little laughter.",
             "type": "textarea"
-        },
-        {
-            "name": "footerGivingText",
-            "label": "Giving note (first part)",
-            "group": "Footer",
-            "value": "A portion of all session fees is donated to",
-            "type": "text"
-        },
-        {
-            "name": "footerGivingUrl",
-            "label": "Giving note (link URL)",
-            "group": "Footer",
-            "value": "https://thelovelandfoundation.org",
-            "type": "text"
-        },
-        {
-            "name": "footerGivingLinkLabel",
-            "label": "Giving note (link text)",
-            "group": "Footer",
-            "value": "The Loveland Foundation",
-            "type": "text"
         },
         {
             "name": "footerLegalLinks",

@@ -37,7 +37,7 @@ Publii conventions, completely different look. Install one or the other
 | FAQ questions & answers | **FAQ** |
 | Closing CTA | **Closing** |
 | Email, phone, serving area, hours, form endpoint | **Contact** |
-| Tagline, giving note, legal links | **Footer** |
+| Tagline, legal links | **Footer** |
 
 Practice name/logo text lives in **Site Settings → Basic settings** (site name).
 Blog posts: **Posts → Add new post**. Legal pages: **Pages → Add new page**,
