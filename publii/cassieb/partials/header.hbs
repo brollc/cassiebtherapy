@@ -18,10 +18,11 @@
 
     <nav class="primary-nav" id="primaryNav" aria-label="Primary">
       <ul>
-        <li><a href="{{ @website.baseUrl }}#about">About</a></li>
-        <li><a href="{{ @website.baseUrl }}#services">Specialties</a></li>
-        <li><a href="{{ @website.baseUrl }}#approach">Approach</a></li>
-        <li><a href="{{ @website.baseUrl }}#faq">FAQ</a></li>
+        <li><a href="{{ @website.baseUrl }}#about">{{ @config.custom.navAboutLabel }}</a></li>
+        <li><a href="{{ @website.baseUrl }}#the-work">{{ @config.custom.navWorkLabel }}</a></li>
+        <li><a href="{{ @website.baseUrl }}#services">{{ @config.custom.navSpecialtiesLabel }}</a></li>
+        <li><a href="{{ @website.baseUrl }}#bookshelf">{{ @config.custom.navBookshelfLabel }}</a></li>
+        <li><a href="{{ @website.baseUrl }}#faq">{{ @config.custom.navFaqLabel }}</a></li>
         <li><a href="{{ @website.baseUrl }}#contact" class="nav-cta">{{ @config.custom.navCtaLabel }}</a></li>
       </ul>
     </nav>

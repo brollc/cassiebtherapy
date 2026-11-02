@@ -2,34 +2,32 @@
 {{> head}}
 {{> header}}
 
-<main id="main" class="post-page">
-  <div class="container">
-    {{#post}}
-    <article class="post-article">
-      <header class="post-header">
-        <p class="post-eyebrow">{{ @config.custom.notesEyebrow }}</p>
-        <h1>{{title}}</h1>
-        <p class="post-meta">
-          <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">{{date createdAt}}</time>
-        </p>
-      </header>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">{{ @config.custom.blogEyebrow }}</p>
+      {{#post}}
+      <h1>{{title}}</h1>
+      <p class="page-hero-lead post-meta"><time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">{{date createdAt}}</time></p>
+      {{/post}}
+    </div>
+  </section>
 
+  <section class="page-content">
+    <div class="container">
+      {{#post}}
       {{#featuredImage}}
         {{#if url}}
-        <figure class="post-hero-image">
-          <img src="{{url}}" {{lazyload "lazy"}} alt="{{alt}}" height="{{height}}" width="{{width}}">
-        </figure>
+        <img src="{{url}}" {{lazyload "lazy"}} alt="{{alt}}" height="{{height}}" width="{{width}}">
         {{/if}}
       {{/featuredImage}}
-
       <div class="post-content">
         {{{text}}}
       </div>
-
-      <p class="post-back"><a href="{{ @website.baseUrl }}">&larr; Back home</a></p>
-    </article>
-    {{/post}}
-  </div>
+      <p class="page-back"><a href="{{ @website.baseUrl }}">{{ @config.custom.backHomeLabel }}</a></p>
+      {{/post}}
+    </div>
+  </section>
 </main>
 
 {{> footer}}

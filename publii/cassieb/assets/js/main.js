@@ -23,28 +23,31 @@
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
+    /* close on link click */
     primaryNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", closeNav);
     });
 
+    /* close on outside click */
     document.addEventListener("click", function (e) {
       if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) closeNav();
     });
 
+    /* close on Escape */
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeNav();
     });
   }
 
-  /* ---------- Sticky header shadow + back to top ---------- */
+  /* ---------- Sticky header shadow ---------- */
   var header = document.getElementById("header");
-  var backToTop = document.getElementById("backToTop");
-
   function onScroll() {
     if (header) header.classList.toggle("scrolled", window.scrollY > 12);
     if (backToTop) backToTop.hidden = window.scrollY < 500;
   }
 
+  /* ---------- Back to top ---------- */
+  var backToTop = document.getElementById("backToTop");
   if (backToTop) {
     backToTop.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -61,11 +64,10 @@
       ".about-art",
       ".workthrough-list li",
       ".step",
-      ".diff-card",
       ".specialty-card",
-      ".faq-item",
-      ".note-card",
-      ".archive-card"
+      ".book-tile",
+      ".nutsbolts-card",
+      ".faq-item"
     ];
 
     document.querySelectorAll(revealTargets.join(",")).forEach(function (el) {
@@ -74,9 +76,10 @@
 
     var io = new IntersectionObserver(
       function (entries, obs) {
-        entries.forEach(function (entry) {
+        entries.forEach(function (entry, i) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("in");
+            /* slight stagger within a group */
+            setTimeout(function () { entry.target.classList.add("in"); }, 0);
             obs.unobserve(entry.target);
           }
         });
@@ -85,67 +88,5 @@
     );
 
     document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
-  }
-
-  /* ---------- Contact form ---------- */
-  var form = document.getElementById("contactForm");
-  if (form) {
-    var success = document.getElementById("formSuccess");
-    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    /* If no backend endpoint is configured, fall back to opening
-       the visitor's email app with the message pre-filled. */
-    var hasEndpoint = !!form.getAttribute("action");
-
-    function setError(field, invalid) {
-      field.classList.toggle("invalid", invalid);
-    }
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var ok = true;
-
-      var name = form.querySelector("#name");
-      var email = form.querySelector("#email");
-      var consent = form.querySelector("#consent");
-
-      if (!name.value.trim()) { setError(name.closest(".form-field"), true); ok = false; }
-      else setError(name.closest(".form-field"), false);
-
-      if (!emailRe.test(email.value.trim())) { setError(email.closest(".form-field"), true); ok = false; }
-      else setError(email.closest(".form-field"), false);
-
-      if (!consent.checked) { setError(consent.closest(".form-field"), true); ok = false; }
-      else setError(consent.closest(".form-field"), false);
-
-      if (!ok) return;
-
-      if (hasEndpoint) {
-        /* Endpoint configured (e.g. Formspree) — send natively. */
-        form.removeAttribute("novalidate");
-        form.submit();
-        success.hidden = false;
-        return;
-      }
-
-      /* Mailto fallback */
-      var to = form.getAttribute("data-email") || "";
-      var subject = "Website inquiry from " + name.value.trim();
-      var body =
-        "Name: " + name.value.trim() +
-        "\nEmail: " + email.value.trim() +
-        "\nPhone: " + (form.querySelector("#phone").value.trim() || "-") +
-        "\nService: " + (form.querySelector("#service").value || "Not specified") +
-        "\n\nWhat's bringing me to therapy:\n" +
-        (form.querySelector("#message").value.trim() || "-");
-      window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      success.hidden = false;
-    });
-
-    form.querySelectorAll("input, select, textarea").forEach(function (input) {
-      input.addEventListener("input", function () {
-        setError(input.closest(".form-field"), false);
-      });
-    });
   }
 })();

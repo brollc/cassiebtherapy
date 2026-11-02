@@ -11,57 +11,45 @@
         <span class="logo-text">{{ @website.name }}</span>
       </a>
       <p class="footer-tagline">{{ @config.custom.footerTagline }}</p>
-      {{#if @config.custom.footerGivingText}}
-      <p class="footer-giving">
-        {{ @config.custom.footerGivingText }}
-        {{#if @config.custom.footerGivingUrl}}
-          <a href="{{ @config.custom.footerGivingUrl }}" target="_blank" rel="noopener">{{ @config.custom.footerGivingLinkLabel }}</a>
-        {{else}}
-          {{ @config.custom.footerGivingLinkLabel }}
-        {{/if}}
-      </p>
-      {{/if}}
     </div>
 
     <nav class="footer-nav" aria-label="Footer">
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h4>{{ @config.custom.footerExploreTitle }}</h4>
         <ul>
-          <li><a href="{{ @website.baseUrl }}#about">About</a></li>
-          <li><a href="{{ @website.baseUrl }}#services">Specialties</a></li>
-          <li><a href="{{ @website.baseUrl }}#approach">Approach</a></li>
-          <li><a href="{{ @website.baseUrl }}#faq">FAQ</a></li>
+          <li><a href="{{ @website.baseUrl }}#about">{{ @config.custom.navAboutLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#the-work">{{ @config.custom.navWorkLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#services">{{ @config.custom.navSpecialtiesLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#bookshelf">{{ @config.custom.navBookshelfLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#faq">{{ @config.custom.navFaqLabel }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Specialties</h4>
+        <h4>{{ @config.custom.footerSpecialtiesTitle }}</h4>
         <ul>
-          <li><a href="{{ @website.baseUrl }}#services">Somatic Therapy</a></li>
-          <li><a href="{{ @website.baseUrl }}#services">Trauma Therapy</a></li>
-          <li><a href="{{ @website.baseUrl }}#services">Anxiety Therapy</a></li>
-          <li><a href="{{ @website.baseUrl }}#services">Grief &amp; Transitions</a></li>
+          <li><a href="{{ @website.baseUrl }}#services">{{ @config.custom.footerIndividualLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#services">{{ @config.custom.footerCouplesLabel }}</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Get in touch</h4>
+        <h4>{{ @config.custom.footerTouchTitle }}</h4>
         <ul>
           <li><a href="mailto:{{ @config.custom.contactEmail }}">{{ @config.custom.contactEmail }}</a></li>
-          <li><a href="{{ @website.baseUrl }}#contact">Book a consult</a></li>
-          {{#each @config.custom.footerLegalLinks}}
-          <li><a href="{{url}}">{{label}}</a></li>
-          {{/each}}
+          <li><a href="{{ @website.baseUrl }}#contact">{{ @config.custom.footerConsultLabel }}</a></li>
         </ul>
       </div>
     </nav>
   </div>
 
   <div class="footer-bottom container">
-    <p>&copy; <span id="year">2026</span> {{ @website.name }}. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> {{ @website.name }}. All rights reserved.</p>
+    {{#if @config.custom.footerLegalLinks}}
     <p class="footer-legal">
       {{#each @config.custom.footerLegalLinks}}
       <a href="{{url}}">{{label}}</a>
       {{/each}}
     </p>
+    {{/if}}
     <p class="footer-crisis-note">{{ @config.custom.crisisLineNote }} <strong>988</strong>.</p>
   </div>
 </footer>
