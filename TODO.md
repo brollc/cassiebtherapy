@@ -4,11 +4,8 @@
 
 The contact form has been removed. Once SimplePractice is set up, grab its
 widget embed code and:
-- **Static site:** paste it in the contact section of `index.html` where the
-  comment marks the spot.
-- **Serene theme:** paste it into **Theme settings → Contact → Booking widget
-  embed** — it renders automatically beside the contact info (two-column
-  layout returns). Empty field = hidden.
+- Paste it in the contact section of `index.html` where the comment marks
+  the spot; restore the two-column `.contact-grid` layout around it.
 
 ## Footer charitable-giving note (removed, decide if you want one)
 
@@ -17,15 +14,14 @@ donated to The Loveland Foundation…") that was borrowed from another therapist
 site. It's been removed — both for originality and because it's a factual claim
 that must only be on the site if it's true. If you genuinely donate a portion
 of fees, pick your organization and your own wording, and it can be re-added
-(there's a `footerTagline` setting in the theme's Footer tab where a sentence
-like that would live).
+(add a sentence to the footer tagline of each page if so).
 
 ## Footer legal links (hidden for now)
 
 The footer's legal links — Privacy Policy, Good Faith Estimate, and
-Notice of Privacy Practices — are hidden until the pages exist. In the
-serene theme they're an empty repeater (add entries in the Footer tab
-once the pages are live).
+Notice of Privacy Practices — are hidden until the pages exist. Re-add
+them in the `<p class="footer-legal">` spot of each page's footer once
+the pages are live (git history has the old markup).
 
 1. **Draft the three pages.** Sources for content:
    - *Notice of Privacy Practices* — your HIPAA notice; the HHS provides
@@ -40,5 +36,4 @@ once the pages are live).
    and `notice-of-privacy-practices.html`, copy the header/footer from
    `about.html`, and replace the three `href="#"` links in the footer of
    `index.html`, `about.html`, `the-work.html`, and `bookshelf.html`.
-3. **Publii (serene theme):** create the pages under **Pages → Add new page**,
-   then paste each page's URL into **Theme settings → Footer → Legal links**.
+
