@@ -231,14 +231,6 @@ p { margin: 0 0 1em; }
     url("images/sunrise-road.jpg") top/cover;
   background-color: var(--leaf-light);
 }
-.about-art-stamp {
-  position: absolute; bottom: 22px; right: 22px; z-index: 2;
-  background: var(--leaf-deep); color: var(--cream);
-  padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: 0.85rem;
-  display: inline-flex; align-items: center; gap: 8px;
-  box-shadow: var(--shadow-md);
-}
-
 .about-content .section-eyebrow { color: var(--moss); }
 .about-intro {
   font-family: var(--font-head); font-size: 1.25rem; font-style: italic;
