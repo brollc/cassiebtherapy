@@ -263,7 +263,7 @@
 
   {{! ================= CONTACT ================= }}
   <section class="contact" id="contact">
-    <div class="container contact-grid">
+    <div class="container {{#if @config.custom.contactEmbed}}contact-grid{{/if}}">
       <div class="contact-info">
         <p class="section-eyebrow">{{ @config.custom.contactEyebrow }}</p>
         <h2>{{ @config.custom.contactTitle }}</h2>
@@ -291,48 +291,11 @@
         </ul>
       </div>
 
-      <form class="contact-form" id="contactForm" data-email="{{ @config.custom.contactEmail }}" novalidate{{#if @config.custom.contactFormEndpoint}} action="{{ @config.custom.contactFormEndpoint }}" method="POST"{{/if}}>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="name">Your name</label>
-            <input type="text" id="name" name="name" required autocomplete="name">
-            <span class="form-error" data-error-for="name">Please tell me your name.</span>
-          </div>
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required autocomplete="email">
-            <span class="form-error" data-error-for="email">Please enter a valid email.</span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="phone">Phone <span class="optional">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel">
-          </div>
-          <div class="form-field">
-            <label for="service">I'm interested in</label>
-            <select id="service" name="service">
-              <option value="">Select a service</option>
-              <option>Individual therapy</option>
-              <option>Couples therapy</option>
-              <option>Free consultation</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="message">What's bringing you to therapy?</label>
-          <textarea id="message" name="message" rows="4" placeholder="Share as much or as little as you'd like..."></textarea>
-        </div>
-        <div class="form-field form-checkbox">
-          <input type="checkbox" id="consent" name="consent" required>
-          <label for="consent">I understand this form is not for emergencies. In a crisis I'll call or text 988.</label>
-          <span class="form-error" data-error-for="consent">Please acknowledge to continue.</span>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-        <p class="form-success" id="formSuccess" role="status" hidden>Thank you — your message has been received. I'll be in touch soon. 💙</p>
-        <p class="form-crisis">If you're in crisis or having thoughts of self-harm, please call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline) or go to your nearest emergency room.</p>
-      </form>
+      {{#if @config.custom.contactEmbed}}
+      <div class="contact-embed">
+        {{{ @config.custom.contactEmbed }}}
+      </div>
+      {{/if}}
     </div>
   </section>
 

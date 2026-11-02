@@ -904,7 +904,7 @@
             "value": [
                 {
                     "title": "Get in touch",
-                    "text": "Send a note through the form below and share as much or as little as you like. I'll reply personally to set up a time to talk."
+                    "text": "Send me an email and share as much or as little as you like. I'll reply personally to set up a time to talk."
                 },
                 {
                     "title": "Free consult",
@@ -1058,7 +1058,7 @@
             "name": "closingText",
             "label": "Section text",
             "group": "Closing",
-            "value": "Whether you've been thinking about this for a long time or only started wondering, you're welcome here. Whenever you're ready, send a note below and we'll find a time to talk.",
+            "value": "Whether you've been thinking about this for a long time or only started wondering, you're welcome here. Whenever you're ready, send me an email and we'll find a time to talk.",
             "type": "textarea"
         },
         {
@@ -1086,7 +1086,7 @@
             "name": "contactText",
             "label": "Section intro",
             "group": "Contact",
-            "value": "Send a brief note and I'll personally reply to schedule your free consultation. Whatever you share is held with care.",
+            "value": "The quickest way to reach me is email — I'd love to hear from you. Whatever you share is held with care.",
             "type": "textarea"
         },
         {
@@ -1112,12 +1112,12 @@
             "type": "text"
         },
         {
-            "name": "contactFormEndpoint",
-            "label": "Contact form endpoint (Formspree)",
+            "name": "contactEmbed",
+            "label": "Booking widget embed (SimplePractice)",
             "group": "Contact",
             "value": "",
-            "type": "text",
-            "note": "Recommended: create a free form at formspree.io, then paste the endpoint URL (looks like https://formspree.io/f/xxxxxxx) here. If left empty, the form falls back to opening the visitor's email app."
+            "type": "textarea",
+            "note": "Paste your SimplePractice (or other) booking widget embed code here — leave empty to hide it. Until then, contact is by email only."
         },
         {
             "name": "footerTagline",

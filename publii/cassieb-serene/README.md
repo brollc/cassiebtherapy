@@ -36,7 +36,7 @@ Publii conventions, completely different look. Install one or the other
 | Blog section title/intro (section appears only once you write posts) | **Blog section** |
 | FAQ questions & answers | **FAQ** |
 | Closing CTA | **Closing** |
-| Email, phone, serving area, hours, form endpoint | **Contact** |
+| Email, serving area, hours, **booking widget embed** | **Contact** |
 | Tagline, legal links | **Footer** |
 
 Practice name/logo text lives in **Site Settings → Basic settings** (site name).
@@ -66,17 +66,16 @@ The full content lives in Publii **Pages**, which you create once in the GUI:
    before your first sync, or clear the link-label fields in those tabs to hide
    the links.
 
-## Contact form (Formspree)
+## Booking widget (SimplePractice) — coming later
 
-Static sites can't process forms by themselves, so:
+The built-in contact form has been removed for now. Contact is by **email**
+until a SimplePractice booking widget is ready. When it is:
 
-- **Recommended:** create a free form at [formspree.io](https://formspree.io) and
-  paste the endpoint URL (looks like `https://formspree.io/f/xxxxxxx`) into
-  **Theme settings → Contact → Contact form endpoint**. Submissions arrive in
-  your email inbox.
-- **Fallback (do nothing):** if the endpoint is empty, the form opens the
-  visitor's email app with their message pre-filled (using the email address
-  set in the **Contact** tab).
+- Copy the widget embed code from SimplePractice (their "Widget" feature gives
+  you an `<iframe>`/script snippet)
+- Paste it into **Theme settings → Contact → Booking widget embed**
+- It renders in a card beside your contact info (two-column layout returns
+  automatically); leave the field empty and nothing shows.
 
 ## Things you must verify before publishing
 

@@ -1,5 +1,15 @@
 # TODO — Cassie B Therapy site
 
+## SimplePractice booking widget (replaces the old contact form)
+
+The contact form has been removed. Once SimplePractice is set up, grab its
+widget embed code and:
+- **Static site:** paste it in the contact section of `index.html` where the
+  comment marks the spot.
+- **Serene theme:** paste it into **Theme settings → Contact → Booking widget
+  embed** — it renders automatically beside the contact info (two-column
+  layout returns). Empty field = hidden.
+
 ## Footer charitable-giving note (removed, decide if you want one)
 
 The footer previously carried a giving note ("a portion of all session fees is

@@ -789,6 +789,15 @@ section { padding: 96px 0; }
 
 .contact-info h2 { margin-bottom: 16px; }
 .contact-info > p { color: var(--ink-soft); }
+.contact-embed {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 34px;
+    box-shadow: var(--shadow-soft);
+}
+/* When no embed is present the contact info centers on its own */
+.container:not(.contact-grid) .contact-info { max-width: 640px; margin: 0 auto; }
 
 .contact-details { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 18px; }
 
