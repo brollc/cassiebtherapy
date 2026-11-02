@@ -515,6 +515,18 @@ p { margin: 0 0 1em; }
 .faq-body p { margin: 0; color: var(--ink-soft); }
 
 /* ====================================================
+   SESSION COST
+   ==================================================== */
+.session-cost { padding: 100px 0; background: var(--cream); }
+.session-cost .section-head { margin-bottom: 2.4em; }
+.session-cost-fee {
+  font-family: var(--font-head); font-size: 1.5rem; font-weight: 600;
+  color: var(--leaf-deep); text-align: center; margin: 0 auto 2em; line-height: 1.3;
+}
+.session-cost-content { max-width: 720px; margin: 0 auto; }
+.session-cost-content p { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.8; }
+
+/* ====================================================
    CLOSING CTA
    ==================================================== */
 .closing {
