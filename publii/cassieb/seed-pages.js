@@ -54,6 +54,7 @@ function cdp(wsUrl) {
 }
 
 const PAGES = [
+  { slug: "home", title: "Home", template: "", frontpage: true },
   { slug: "about", title: "About", template: "about" },
   { slug: "the-work", title: "The Work", template: "the-work" },
   { slug: "bookshelf", title: "Bookshelf", template: "bookshelf" },
@@ -141,7 +142,7 @@ async function main() {
       template: p.template,
       editor: "blockeditor", viewOptions: {},
       additionalData: { metaTitle: "", metaDescription: "", metaRobots: "", canonicalUrl: "", ogImage: "", ogTitle: "", ogDescription: "" },
-      pageViewSettings: {},
+      pageViewSettings: p.frontpage ? { useAsFrontpage: { type: "select", value: "on" } } : {},
       featuredImage: "", featuredImageFilename: "", featuredImageData: { alt: "", caption: "", credits: "" },
     };
     // bulletproof two-step transport: stash the JSON on window, verify it parses, then send

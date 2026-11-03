@@ -47,6 +47,11 @@ for (const p of ["head", "header", "footer"]) {
 const noop = () => "";
 for (const h of ["css","metaDescription","metaRobots","canonicalLink","feedLink","socialMetaTags","publiiHead","jsonLD","lazyload","checkIfAny"]) Handlebars.registerHelper(h, noop);
 Handlebars.registerHelper("date", () => "Nov 2, 2026");
+Handlebars.registerHelper("getPagesByCustomFields", function(query, options) {
+  // mock: return the real home seed as the frontpage page context
+  const seed = fs.readFileSync(path.join(themeDir, "seed", "home.html"), "utf8");
+  return options.fn({ text: seed, title: "Home" });
+});
 Handlebars.registerHelper("translate", (k) => k);
 
 const custom = {};
@@ -104,7 +109,7 @@ for (const pg of ["about", "the-work", "bookshelf"]) {
   const marks = {
     "about": ["holiday dinner", "MN License #cc04877"],
     "the-work": ["Questions we might sit with together", "Narrative", "Attachment"],
-    "bookshelf": ["Dungeon Crawler Carl", "The Body Keeps the Score", "/assets/images/books/"],
+    "bookshelf": ["Dungeon Crawler Carl", "The Body Keeps the Score", "#DOMAIN_NAME#", 'data-responsive="false"'],
   }[pg];
   const seed = fs.readFileSync(path.join(themeDir, "seed", pg + ".html"), "utf8");
   for (const m of marks) if (!seed.includes(m)) fail(`seed/${pg}.html missing: ${m}`);
