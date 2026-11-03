@@ -148,6 +148,22 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
   const imgs = countFiles(path.join(PREVIEW_DIR, "assets", "images"));
   ok(`bundled images deployed: ${imgs}`);
 
+  // 7. definitive check: normalized body diff vs the live static site
+  const staticSite = fs.readFileSync("/home/cassie/cassie-website/index.html", "utf8");
+  const norm = (src) => {
+    let s = src.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+    s = s.replace(/<!--[\s\S]*?-->/g, "");
+    s = s.replace(/file:\/\/\/home\/cassie\/Publii\/sites\/cassie-b-therapy\/preview\//g, "");
+    for (const pg of ["about", "the-work", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
+    s = s.replace(/assets\/css\/main\.css[^"]*/g, "STYLESHEET");
+    s = s.replace(/>\s+</g, "><").replace(/>\s+/g, ">").replace(/\s+</g, "<").replace(/\s+/g, " ");
+    return s.trim();
+  };
+  const strip = (src) => (src.match(/<main[\s\S]*?<\/footer>/) || [""])[0];
+  const pBody = norm(strip(home)), sBody = norm(strip(staticSite));
+  if (pBody === sBody) ok(`body diff vs live static site: IDENTICAL (${pBody.length} chars)`);
+  else fail(`body diff vs static site: ${pBody.length} vs ${sBody.length} chars — inspect manually`);
+
   console.log(failures === 0 ? "\nRENDER TEST PASSED — real Publii renderer, real site DB" : `\n${failures} FAILURES`);
   finish(child);
 }
