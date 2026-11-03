@@ -212,6 +212,7 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     return (i >= 0 && j > i) ? src.slice(i, j) : src;
   };
   for (const p of PAGES) {
+    if (p.slug === "home") continue; // homepage diff is handled by render-driver vs index.html
     let rendered = "";
     for (const cand of [path.join(PREVIEW_DIR, p.slug, "index.html"), path.join(PREVIEW_DIR, p.slug + ".html")]) {
       if (fs.existsSync(cand)) { rendered = fs.readFileSync(cand, "utf8"); break; }
