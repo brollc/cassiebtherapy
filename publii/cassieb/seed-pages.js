@@ -60,15 +60,24 @@ const PAGES = [
 ];
 
 async function main() {
-  // guard: Publii must be closed
+  // guard: Publii must be closed — the real main process is Electron
+  // (the /usr/bin/publii wrapper execs it), so match by app path; the
+  // character-class trick avoids pgrep matching this script's own wrapper
   try {
     const { execSync } = require("child_process");
-    const out = execSync("pgrep -f /usr/lib/publii || true").toString().trim();
-    if (out) { console.log("Publii is currently running — close it first, then re-run."); process.exit(1); }
+    const out = execSync("pgrep -f 'publii/app[.]asar' || true").toString().trim();
+    if (out) { console.log("Publii is currently running (pid " + out + ") — close it first, then re-run."); process.exit(1); }
   } catch (e) {}
 
+  // always test the CURRENT repo theme: sync it into the site before rendering
+  const siteTheme = path.join(process.env.HOME, "Publii", "sites", SITE, "input", "themes", "cassieb");
+  fs.rmSync(siteTheme, { recursive: true, force: true });
+  fs.cpSync(THEME_DIR, siteTheme, { recursive: true });
+  ok("repo theme synced into site");
+
   fs.rmSync(PREVIEW_DIR, { recursive: true, force: true });
-  const child = spawn("/usr/bin/publii", [`--remote-debugging-port=${DEBUG_PORT}`], { detached: true, stdio: "ignore" });
+  const logFd = fs.openSync("/tmp/cassie-extract/publii-main.log", "w");
+  const child = spawn("/usr/bin/publii", [`--remote-debugging-port=${DEBUG_PORT}`], { detached: true, stdio: ["ignore", logFd, logFd] });
   child.unref();
   const targets = await waitForTargets();
   const conn = await cdp(targets[0].webSocketDebuggerUrl);
@@ -79,11 +88,44 @@ async function main() {
   }
   ok("Publii up, mainProcessAPI ready");
 
-  // seed the three pages via the app's own save path
+  // open the site in the app session — setDbForSite is only called by the
+  // site-open flow, and page saves need it (this was the cause of the
+  // "this.db.prepare is not a function" error window)
+  await conn.send("Runtime.evaluate", { expression:
+    `mainProcessAPI.receiveOnce('app-site-switched', (...a) => { window.__siteOpened = JSON.stringify(a); });` });
+  await conn.send("Runtime.evaluate", { expression:
+    `mainProcessAPI.send('app-site-switch', { site: '${SITE}' })`, returnByValue: true });
+  let siteOpened = null;
+  for (let i = 0; i < 30 && siteOpened === null; i++) {
+    await sleep(1000);
+    const r = await conn.send("Runtime.evaluate", { expression: "window.__siteOpened || null", returnByValue: true });
+    if (r.result?.result?.value) siteOpened = r.result.result.value;
+  }
+  if (siteOpened && !siteOpened.includes('"error"')) ok("site opened in app session (DB handle ready)");
+  else fail("app-site-switch failed: " + (siteOpened || "no response").slice(0, 200));
+
+  // existing pages by slug (read-only DB query — Publii is closed at this point)
+  const { execSync } = require("child_process");
+  const existing = {};
+  try {
+    const dbPath = path.join(process.env.HOME, "Publii", "sites", SITE, "input", "db.sqlite");
+    const out = execSync(`python3 -c "import sqlite3, json; con=sqlite3.connect('${dbPath}'); print(json.dumps([{'slug': r[0], 'id': r[1]} for r in con.execute('SELECT slug, id FROM posts WHERE status LIKE \\'%is-page%\\'')]))"`).toString();
+    for (const r of JSON.parse(out.trim())) existing[r.slug] = r.id;
+    console.log("existing pages:", JSON.stringify(existing));
+  } catch (e) { console.log("no existing pages readable:", e.message.split("\n")[0]); }
+
+  // seed the three pages via the app's own save path (insert or update by id)
+  const checkEval = (r, label) => {
+    if (r.result && r.result.exceptionDetails) {
+      fail(`${label} evaluate threw: ` + JSON.stringify(r.result.exceptionDetails).slice(0, 400));
+      return false;
+    }
+    return true;
+  };
   for (const p of PAGES) {
     const text = fs.readFileSync(path.join(THEME_DIR, "seed", p.slug + ".html"), "utf8");
     const payload = {
-      site: SITE, id: 0, title: p.title, slug: p.slug, text,
+      site: SITE, id: existing[p.slug] || 0, title: p.title, slug: p.slug, text,
       author: 1, status: "published,is-page",
       creationDate: Date.now(), modificationDate: Date.now(),
       template: p.template,
@@ -92,18 +134,25 @@ async function main() {
       pageViewSettings: {},
       featuredImage: "", featuredImageFilename: "", featuredImageData: { alt: "", caption: "", credits: "" },
     };
-    await conn.send("Runtime.evaluate", { expression:
-      `mainProcessAPI.receiveOnce('app-page-saved', (...a) => { window.__saved_${p.slug} = JSON.stringify(a); });` });
-    await conn.send("Runtime.evaluate", { expression:
-      `mainProcessAPI.send('app-page-save', ${JSON.stringify(payload).replace(/'/g, "\\'")})`, returnByValue: true });
+    // bulletproof two-step transport: stash the JSON on window, verify it parses, then send
+    let r = await conn.send("Runtime.evaluate", { expression:
+      `window.__payload = ${JSON.stringify(JSON.stringify(payload))};`, returnByValue: true });
+    if (!checkEval(r, `${p.slug} stash`)) break;
+    r = await conn.send("Runtime.evaluate", { expression:
+      `(() => { const p = JSON.parse(window.__payload); mainProcessAPI.receiveOnce('app-page-saved', (...a) => { window["__saved_${p.slug}"] = JSON.stringify(a); }); mainProcessAPI.send('app-page-save', p); })()`,
+      returnByValue: true });
+    if (!checkEval(r, `${p.slug} send`)) break;
     let saved = null;
     for (let i = 0; i < 30 && saved === null; i++) {
       await sleep(1000);
-      const r = await conn.send("Runtime.evaluate", { expression: `window.__saved_${p.slug} || null`, returnByValue: true });
+      const r = await conn.send("Runtime.evaluate", { expression: `window["__saved_${p.slug}"] || null`, returnByValue: true });
       if (r.result?.result?.value) saved = r.result.result.value;
     }
     if (saved && saved.includes("pages")) ok(`page saved via app: ${p.slug}`);
-    else fail(`page save failed for ${p.slug}: ${(saved || "no response").slice(0, 200)}`);
+    else {
+      fail(`page save failed for ${p.slug}: ${(saved || "no response").slice(0, 200)}`);
+      break;
+    }
   }
 
   // render and verify
@@ -118,7 +167,7 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     const r = await conn.send("Runtime.evaluate", { expression: "window.__renderResult || null", returnByValue: true });
     if (r.result?.result?.value) result = JSON.parse(r.result.result.value);
   }
-  if (result && result[0] === true) ok("site rendered with seeded pages");
+  if (result && result[0] && result[0].status === true) ok("site rendered with seeded pages");
   else fail("render failed: " + JSON.stringify(result).slice(0, 300));
   conn.close();
 
@@ -129,6 +178,15 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     s = s.replace(/file:\/\/\/home\/cassie\/Publii\/sites\/cassie-b-therapy\/preview\//g, "");
     s = s.replace(/\/assets\/images\/books\//g, "images/books/");
     for (const pg of ["about", "the-work", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
+    s = s.split('href="/"').join('href="index.html"');
+    // theme footer links the logo to baseUrl#home; static depth pages link to index.html directly
+    s = s.replace('href="#home"', 'href="index.html"');
+    // Publii templates prefix anchors with baseUrl (empty in file:// preview);
+    // map bare anchors back to the static site's index.html#anchor form
+    s = s.replace(/href="#([a-z-]+)"/g, 'href="index.html#$1"');
+    s = s.replace('href=""', 'href="index.html"');
+    // Publii's blockeditor renderer annotates non-media-library imgs; harmless metadata
+    s = s.replace(/ data-is-external-image="true"/g, "");
     s = s.replace(/>\s+</g, "><").replace(/>\s+/g, ">").replace(/\s+</g, "<").replace(/\s+/g, " ");
     return s.trim();
   };
@@ -148,6 +206,10 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     else fail(`${p.slug}: diff vs static site (${a.length} vs ${b.length} chars) — inspect preview output`);
   }
   try { process.kill(-child.pid, "SIGTERM"); } catch (e) {}
+  if (failures > 0 && fs.existsSync("/tmp/cassie-extract/publii-main.log")) {
+    console.log("\n--- main process log (last 40 lines) ---");
+    console.log(fs.readFileSync("/tmp/cassie-extract/publii-main.log", "utf8").trim().split("\n").slice(-40).join("\n"));
+  }
   console.log(failures === 0 ? "\nSEED + RENDER + VERIFY: ALL PASSED" : `\n${failures} FAILURES`);
   process.exit(failures === 0 ? 0 : 1);
 }

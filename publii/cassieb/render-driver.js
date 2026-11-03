@@ -73,6 +73,11 @@ function countFiles(dir) {
 
 async function main() {
   // 1. clear old preview + launch Publii with the debug port
+  // always test the CURRENT repo theme: sync it into the site before rendering
+  const siteTheme = path.join(process.env.HOME, "Publii", "sites", SITE, "input", "themes", "cassieb");
+  fs.rmSync(siteTheme, { recursive: true, force: true });
+  fs.cpSync("/home/cassie/cassie-website/publii/cassieb", siteTheme, { recursive: true });
+
   fs.rmSync(PREVIEW_DIR, { recursive: true, force: true });
   console.log("launching Publii with --remote-debugging-port=" + DEBUG_PORT);
   const child = spawn("/usr/bin/publii", [`--remote-debugging-port=${DEBUG_PORT}`], {
