@@ -114,6 +114,16 @@ async function main() {
     console.log("existing pages:", JSON.stringify(existing));
   } catch (e) { console.log("no existing pages readable:", e.message.split("\n")[0]); }
 
+  // copy the book covers into the bookshelf page's media library so the
+  // WYSIWYG editor can display them (#DOMAIN_NAME# resolves to this dir)
+  if (existing["bookshelf"]) {
+    const mediaDir = path.join(process.env.HOME, "Publii", "sites", SITE, "input", "media", "posts", String(existing["bookshelf"]));
+    fs.mkdirSync(mediaDir, { recursive: true });
+    const bookSrc = path.join(THEME_DIR, "assets", "images", "books");
+    for (const f of fs.readdirSync(bookSrc)) fs.copyFileSync(path.join(bookSrc, f), path.join(mediaDir, f));
+    ok(`covers copied to media/posts/${existing["bookshelf"]} (${fs.readdirSync(mediaDir).length} files)`);
+  }
+
   // seed the three pages via the app's own save path (insert or update by id)
   const checkEval = (r, label) => {
     if (r.result && r.result.exceptionDetails) {
@@ -187,6 +197,12 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     s = s.replace('href=""', 'href="index.html"');
     // Publii's blockeditor renderer annotates non-media-library imgs; harmless metadata
     s = s.replace(/ data-is-external-image="true"/g, "");
+    s = s.replace(/ data-responsive="false"/g, "");
+    s = s.replace(/media\/posts\/\d+\//g, "images/books/");
+    // Publii auto-processes media-library images into responsive srcset variants
+    // (xs/sm/md/xl thumbnails) — strip the renderer-added sizes/srcset for the
+    // diff; the visual result is identical (browser picks the best variant)
+    s = s.replace(/ sizes="[^"]*" srcset="[^"]*"/g, "");
     s = s.replace(/>\s+</g, "><").replace(/>\s+/g, ">").replace(/\s+</g, "<").replace(/\s+/g, " ");
     return s.trim();
   };
