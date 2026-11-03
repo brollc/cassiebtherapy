@@ -195,7 +195,8 @@ img { max-width: 100%; display: block; border-radius: 10px; background: var(--sa
     radial-gradient(700px 500px at -5% 110%, rgba(197,211,187,0.5), transparent 60%),
     linear-gradient(175deg, #eef2e8 0%, #f7f4ed 100%);
 }
-.hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; position: relative; }
+.hero-inner { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; position: relative; }
+.hero-art { display: none; } /* hidden on narrow canvases — wide screens restore it below */
 .hero-content { max-width: 560px; }
 .hero-eyebrow { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clay); margin-bottom: 1.2em; }
 .hero-title { margin-bottom: 0.5em; font-weight: 600; }
@@ -230,6 +231,12 @@ img { max-width: 100%; display: block; border-radius: 10px; background: var(--sa
 .badge-emoji { font-size: 1.6rem; }
 .badge-text { font-size: 0.85rem; font-weight: 700; color: var(--leaf-deep); line-height: 1.3; }
 .hero-wave { display: none; } /* decorative svg — skipped in editor */
+
+/* hero photo art only on wide canvases (matches the site's desktop layout) */
+@media (min-width: 981px) {
+  .hero-inner { grid-template-columns: 1.1fr 0.9fr; gap: 64px; }
+  .hero-art { display: block; }
+}
 
 /* ---------- steps ---------- */
 .steps { padding: 100px 0; background: #f7f4ed; }
@@ -311,7 +318,6 @@ img { max-width: 100%; display: block; border-radius: 10px; background: var(--sa
   .workthrough-list { columns: 1; }
   .book-tiles { grid-template-columns: repeat(2, 1fr); }
   .nutsbolts-grid { grid-template-columns: 1fr; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .steps-grid { grid-template-columns: 1fr; }
   .specialties-grid { grid-template-columns: 1fr; }
   .faq-layout { grid-template-columns: 1fr; gap: 32px; }
