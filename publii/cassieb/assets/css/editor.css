@@ -282,11 +282,11 @@ img { max-width: 100%; display: block; border-radius: 10px; background: var(--sa
   list-style: none; font-size: 1.04rem;
 }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-icon { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
-.faq-icon::before, .faq-icon::after { content: ""; position: absolute; background: var(--leaf); border-radius: 2px; }
-.faq-icon::before { top: 10px; left: 2px; width: 18px; height: 2px; }
-.faq-icon::after { left: 10px; top: 2px; width: 2px; height: 18px; }
-.faq-item[open] .faq-icon::after { transform: scaleY(0); }
+.faq-item summary::after {
+  content: "+"; font-size: 1.6rem; font-weight: 300; color: var(--leaf);
+  flex-shrink: 0; margin-left: 16px; line-height: 1;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-body { padding: 0 24px 24px; }
 .faq-body p { margin: 0; color: var(--ink-soft); }
 
