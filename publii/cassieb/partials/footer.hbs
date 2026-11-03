@@ -1,0 +1,63 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="{{ @website.baseUrl }}#home" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 4C30 10 35 16 35 24a13 13 0 0 1-26 0c0-8 5-14 13-20z" fill="var(--leaf-light)"/>
+            <path d="M22 36V12M22 12c-4 0-7 3-7 7M22 12c4 0 7 3 7 7" stroke="var(--leaf-deep)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+        <span class="logo-text">{{ @website.name }}</span>
+      </a>
+      <p class="footer-tagline">{{ @config.custom.footerTagline }}</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <div class="footer-col">
+        <h4>{{ @config.custom.footerExploreTitle }}</h4>
+        <ul>
+          <li><a href="{{ @website.baseUrl }}#about">{{ @config.custom.navAboutLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#the-work">{{ @config.custom.navWorkLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#services">{{ @config.custom.navSpecialtiesLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#bookshelf">{{ @config.custom.navBookshelfLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#faq">{{ @config.custom.navFaqLabel }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>{{ @config.custom.footerSpecialtiesTitle }}</h4>
+        <ul>
+          <li><a href="{{ @website.baseUrl }}#services">{{ @config.custom.footerIndividualLabel }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#services">{{ @config.custom.footerCouplesLabel }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>{{ @config.custom.footerTouchTitle }}</h4>
+        <ul>
+          <li><a href="mailto:{{ @config.custom.contactEmail }}">{{ @config.custom.contactEmail }}</a></li>
+          <li><a href="{{ @website.baseUrl }}#contact">{{ @config.custom.footerConsultLabel }}</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer-bottom container">
+    <p>&copy; <span id="year"></span> {{ @website.name }}. All rights reserved.</p>
+    {{#if @config.custom.footerLegalLinks}}
+    <p class="footer-legal">
+      {{#each @config.custom.footerLegalLinks}}
+      <a href="{{url}}">{{label}}</a>
+      {{/each}}
+    </p>
+    {{/if}}
+    <p class="footer-crisis-note">{{ @config.custom.crisisLineNote }} <strong>988</strong>.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="{{ @website.assetsUrl }}/js/main.js" defer></script>
+</body>
+</html>

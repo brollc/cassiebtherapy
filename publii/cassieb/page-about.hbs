@@ -1,0 +1,44 @@
+{{!
+  "About" page template — full bio page.
+  Create a page in Publii with the slug 'about' and select the 'About' template
+  in the page editor. All content comes from Theme settings → About.
+}}
+{{> head}}
+{{> header}}
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">{{ @config.custom.aboutPageEyebrow }}</p>
+      <h1>{{ @config.custom.aboutPageTitle }}</h1>
+      <p class="page-hero-lead">
+        {{ @config.custom.aboutPageLead }}
+      </p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <p class="about-intro">
+        <em>{{ @config.custom.aboutPageIntro }}</em>
+      </p>
+      <p>{{{ @config.custom.aboutPageP1 }}}</p>
+      <p>{{ @config.custom.aboutPageP2 }}</p>
+      <p>{{ @config.custom.aboutPageP3 }}</p>
+      <p>
+        {{ @config.custom.aboutPageWorkPre }}
+        <a class="about-link" href="{{ @website.baseUrl }}the-work/">{{ @config.custom.aboutPageWorkLinkText }}</a>.
+      </p>
+
+      <div class="about-creds page-creds">
+        {{#each @config.custom.aboutCreds}}
+        <div class="cred"><span class="cred-icon" aria-hidden="true">{{icon}}</span><div><strong>{{title}}</strong><span>{{subtitle}}</span></div></div>
+        {{/each}}
+      </div>
+
+      <p class="page-back"><a href="{{ @website.baseUrl }}">{{ @config.custom.backHomeLabel }}</a></p>
+    </div>
+  </section>
+</main>
+
+{{> footer}}
