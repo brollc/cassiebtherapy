@@ -57,7 +57,7 @@ const data = {
   pagination: {},
 };
 
-const pages = [{ title: "About", text: "<p>bio</p>", slug: "about", template: "about" }];
+const pages = [{ title: "About", text: "<p>holiday dinner</p><p>take a look at</p>", slug: "about", template: "about" }];
 const posts = [{ url: "/p1/", title: "P", excerpt: "e", createdAt: 1700000000, text: "t", mainTag: false, author: { name: "Cassie", url: "#", avatarImage: { url: "" } } }];
 const ctx = {
   title: "T",
@@ -92,14 +92,24 @@ for (const g of gone) if (home.includes(g)) fail(`homepage should not contain: $
 if ((home.match(/faq-item/g) || []).length !== 3) fail("homepage should have exactly 3 FAQ items");
 ok("content assertions passed");
 
-// pages render their content
+// pages render their WYSIWYG body content
 const about = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-about.hbs"), "utf8"))(ctx, { data });
-for (const m of ["holiday dinner", "take a look at"]) if (!about.includes(m)) fail(`about page missing: ${m}`);
+for (const m of ["holiday dinner", "take a look at"]) if (!about.includes(m)) fail(`about page template missing body content: ${m}`);
 const work = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-the-work.hbs"), "utf8"))(ctx, { data });
-for (const m of ["Questions we might sit with together", "Narrative", "Psychodynamic", "Somatic", "Attachment"]) if (!work.includes(m)) fail(`work page missing: ${m}`);
+if (!work.includes("holiday dinner")) fail("work page template missing body content");
 const shelf = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-bookshelf.hbs"), "utf8"))(ctx, { data });
-for (const m of ["Dungeon Crawler Carl", "The Body Keeps the Score", "The Mother Dance"]) if (!shelf.includes(m)) fail(`bookshelf page missing: ${m}`);
-ok("depth pages render their content");
+if (!shelf.includes("holiday dinner")) fail("bookshelf page template missing body content");
+// seed files carry the real page content
+for (const pg of ["about", "the-work", "bookshelf"]) {
+  const marks = {
+    "about": ["holiday dinner", "MN License #cc04877"],
+    "the-work": ["Questions we might sit with together", "Narrative", "Attachment"],
+    "bookshelf": ["Dungeon Crawler Carl", "The Body Keeps the Score", "/assets/images/books/"],
+  }[pg];
+  const seed = fs.readFileSync(path.join(themeDir, "seed", pg + ".html"), "utf8");
+  for (const m of marks) if (!seed.includes(m)) fail(`seed/${pg}.html missing: ${m}`);
+}
+ok("body-driven page templates + seed files verified");
 
 console.log(failures === 0 ? "\nALL CHECKS PASSED" : `\n${failures} FAILURES`);
 process.exit(failures === 0 ? 0 : 1);

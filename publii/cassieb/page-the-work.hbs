@@ -1,63 +1,15 @@
 {{!
-  "The Work" page template — approaches, featured attachment card, beliefs band.
-  Create a page in Publii with the slug 'the-work' and select the 'The Work'
-  template in the page editor. All content comes from Theme settings → The Work.
+  Body-driven page template — all content is edited in Publii's WYSIWYG
+  page editor and rendered inside the site's design shell. Create the page
+  with the matching slug and select this template in the page editor.
 }}
 {{> head}}
 {{> header}}
 
 <main id="main">
-  <section class="page-hero">
-    <div class="container">
-      <p class="section-eyebrow">{{ @config.custom.workPageEyebrow }}</p>
-      <h1>{{{ @config.custom.workPageTitle }}}</h1>
-    </div>
-  </section>
-
-  <section class="page-content">
-    <div class="container">
-      <p>{{{ @config.custom.workPageP1 }}}</p>
-      <p>{{{ @config.custom.workPageP2 }}}</p>
-    </div>
-
-    <div class="container wide">
-      <div class="page-approaches">
-        {{#each @config.custom.workApproaches}}
-        <article class="page-card">
-          <h3>{{name}}</h3>
-          <p>{{text}}</p>
-        </article>
-        {{/each}}
-      </div>
-
-      <article class="page-card attachment-card">
-        <h3>{{ @config.custom.attachmentTitle }}</h3>
-        <p>{{ @config.custom.attachmentText }}</p>
-        <p class="attachment-questions-label">{{ @config.custom.attachmentQuestionsLabel }}</p>
-        <ul class="attachment-questions">{{{ @config.custom.attachmentQuestions }}}</ul>
-        <p class="attachment-questions-note">{{ @config.custom.attachmentNote }}</p>
-      </article>
-    </div>
-
-    <div class="container">
-      <p class="page-back"><a href="{{ @website.baseUrl }}">{{ @config.custom.backHomeLabel }}</a> &nbsp;·&nbsp; <a href="{{ @website.baseUrl }}#contact">{{ @config.custom.navCtaLabel }} →</a></p>
-    </div>
-  </section>
-
-  <section class="workthrough page-beliefs">
-    <div class="container">
-      <div class="workthrough-head">
-        <p class="section-eyebrow eyebrow-light">{{ @config.custom.workBeliefsBandEyebrow }}</p>
-        <h2 class="workthrough-title">{{ @config.custom.workBeliefsBandTitle }}</h2>
-      </div>
-      <ul class="workthrough-list">
-        {{#each @config.custom.workBeliefs}}
-        <li>{{text}}</li>
-        {{/each}}
-      </ul>
-      <a href="{{ @website.baseUrl }}#contact" class="btn btn-primary">{{ @config.custom.workCtaLabel }}</a>
-    </div>
-  </section>
+  {{#page}}
+  {{{text}}}
+  {{/page}}
 </main>
 
 {{> footer}}
