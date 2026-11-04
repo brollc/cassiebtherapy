@@ -56,7 +56,7 @@ function cdp(wsUrl) {
 const PAGES = [
   { slug: "home", title: "Home", template: "", frontpage: true },
   { slug: "about", title: "About", template: "about" },
-  { slug: "the-work", title: "The Work", template: "the-work" },
+  { slug: "therapy", title: "Therapy", template: "therapy", oldSlug: "the-work" },
   { slug: "bookshelf", title: "Bookshelf", template: "bookshelf" },
 ];
 
@@ -112,6 +112,7 @@ async function main() {
     const dbPath = path.join(process.env.HOME, "Publii", "sites", SITE, "input", "db.sqlite");
     const out = execSync(`python3 -c "import sqlite3, json; con=sqlite3.connect('${dbPath}'); print(json.dumps([{'slug': r[0], 'id': r[1]} for r in con.execute('SELECT slug, id FROM posts WHERE status LIKE \\'%is-page%\\'')]))"`).toString();
     for (const r of JSON.parse(out.trim())) existing[r.slug] = r.id;
+    for (const p of PAGES) if (!existing[p.slug] && p.oldSlug && existing[p.oldSlug]) existing[p.slug] = existing[p.oldSlug];
     console.log("existing pages:", JSON.stringify(existing));
   } catch (e) { console.log("no existing pages readable:", e.message.split("\n")[0]); }
 
@@ -188,7 +189,7 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     s = s.replace(/<!--[\s\S]*?-->/g, "");
     s = s.replace(/file:\/\/\/home\/cassie\/Publii\/sites\/cassie-b-therapy\/preview\//g, "");
     s = s.replace(/\/assets\/images\/books\//g, "images/books/");
-    for (const pg of ["about", "the-work", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
+    for (const pg of ["about", "therapy", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
     s = s.split('href="/"').join('href="index.html"');
     // theme footer links the logo to baseUrl#home; static depth pages link to index.html directly
     s = s.replace('href="#home"', 'href="index.html"');

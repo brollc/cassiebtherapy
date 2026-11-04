@@ -2,8 +2,8 @@
 
 Cassie's therapy-practice website as a custom [Publii](https://getpublii.com/) theme —
 an exact reproduction of the original static site (`../../index.html`, `about.html`,
-`the-work.html`, `bookshelf.html`): botanical green/cream palette, Fraunces + Nunito Sans
-fonts, blob-framed hero portrait, ellipse-framed sunrise photo, dark-green "The Work" band,
+`therapy.html`, `bookshelf.html`): botanical green/cream palette, Fraunces + Nunito Sans
+fonts, blob-framed hero portrait, ellipse-framed sunrise photo, dark-green "Therapy" band,
 bookshelf covers, and the email-only contact section (the contact form was removed;
 a SimplePractice booking widget can be added later — see below).
 
@@ -23,8 +23,8 @@ Install one or the other sibling theme (this one, or `cassieb-serene`) under
 |---|---|
 | Nav labels, header button, back-home label, crisis note, favicon, blog-section title/intro | **Basics** |
 | Hero eyebrow, headline, subtitle, buttons, badge text/emoji | **Hero** |
-| Homepage bio (greeting + 2 paragraphs), "Read my full story" link, stamp, credential cards; full About-page story (title, lead, 4 paragraphs, link to The Work) | **About** |
-| Homepage "The Work" intro + dive link + 5 beliefs; The Work page (title, 2 paragraphs, approach cards, Attachment card + questions, beliefs band) | **The Work** |
+| Homepage bio (greeting + 2 paragraphs), "Read my full story" link, stamp, credential cards; full About-page story (title, lead, 4 paragraphs, link to Therapy) | **About** |
+| Homepage "Therapy" intro + dive link + 5 beliefs; Therapy page (title, 2 paragraphs, approach cards, Attachment card + questions, beliefs band) | **Therapy** |
 | License number, degree, both training lists, learner note | **Nuts & Bolts** |
 | The 3 numbered getting-started steps | **Getting started** |
 | Specialty cards (Individual / Couples) | **Specialties** |
@@ -50,14 +50,14 @@ renders its design straight from the theme settings:
 
 1. **Pages → Add new page** → title **About** → slug **about** → in the page editor's
    template dropdown pick **About** → Save.
-2. Same for **The Work** (slug **the-work**, template **The Work**).
+2. Same for **Therapy** (slug **therapy**, template **Therapy**).
 3. Same for **Bookshelf** (slug **bookshelf**, template **Bookshelf**).
 
-The homepage links ("Meet Cassie", "Read my full story →", the The Work dive link and
-the bookshelf button) already point at `/about/`, `/the-work/`, and `/bookshelf/` —
+The homepage links ("Meet Cassie", "Read my full story →", the Therapy dive link and
+the bookshelf button) already point at `/about/`, `/therapy/`, and `/bookshelf/` —
 use those exact slugs and everything just works. Until the pages exist the links 404,
 so create them before your first sync (or empty the link-label fields in the
-About / The Work / Bookshelf tabs to hide them).
+About / Therapy / Bookshelf tabs to hide them).
 
 ## Booking widget (SimplePractice) — coming later
 
@@ -81,7 +81,7 @@ Contact is by **email** until the SimplePractice widget is ready. When it is:
       pixel-identical to the original site.
 - [ ] **License & rates** — double-check `MN License #cc04877`, the trainings lists
       (Nuts & Bolts tab) and the $175 rates answer (FAQ tab).
-- [ ] **Slugs** — the three pages must use the slugs `about`, `the-work`, `bookshelf`.
+- [ ] **Slugs** — the three pages must use the slugs `about`, `therapy`, `bookshelf`.
 
 ## Publishing
 

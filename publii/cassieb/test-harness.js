@@ -72,7 +72,7 @@ const ctx = {
   page: pages[0], post: posts[0],
 };
 
-for (const f of ["index.hbs","post.hbs","page.hbs","page-about.hbs","page-the-work.hbs","page-bookshelf.hbs","tag.hbs","author.hbs","404.hbs"]) {
+for (const f of ["index.hbs","post.hbs","page.hbs","page-about.hbs","page-therapy.hbs","page-bookshelf.hbs","tag.hbs","author.hbs","404.hbs"]) {
   try {
     const out = Handlebars.compile(fs.readFileSync(path.join(themeDir, f), "utf8"))(ctx, { data });
     if (/\{\{|\}\}/.test(out)) fail(`${f}: unresolved tokens in output`);
@@ -100,15 +100,15 @@ ok("content assertions passed");
 // pages render their WYSIWYG body content
 const about = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-about.hbs"), "utf8"))(ctx, { data });
 for (const m of ["holiday dinner", "take a look at"]) if (!about.includes(m)) fail(`about page template missing body content: ${m}`);
-const work = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-the-work.hbs"), "utf8"))(ctx, { data });
+const work = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-therapy.hbs"), "utf8"))(ctx, { data });
 if (!work.includes("holiday dinner")) fail("work page template missing body content");
 const shelf = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-bookshelf.hbs"), "utf8"))(ctx, { data });
 if (!shelf.includes("holiday dinner")) fail("bookshelf page template missing body content");
 // seed files carry the real page content
-for (const pg of ["about", "the-work", "bookshelf"]) {
+for (const pg of ["about", "therapy", "bookshelf"]) {
   const marks = {
     "about": ["holiday dinner", "MN License #cc04877"],
-    "the-work": ["Questions we might sit with together", "Narrative", "Attachment"],
+    "therapy": ["Questions we might sit with together", "Narrative", "Attachment"],
     "bookshelf": ["Dungeon Crawler Carl", "The Body Keeps the Score", "#DOMAIN_NAME#", 'data-responsive="false"'],
   }[pg];
   const seed = fs.readFileSync(path.join(themeDir, "seed", pg + ".html"), "utf8");

@@ -4,7 +4,7 @@
     "author": "Cassie Broll",
     "pageTemplates": {
         "about": "About",
-        "the-work": "The Work",
+        "therapy": "Therapy",
         "bookshelf": "Bookshelf"
     },
     "renderer": {
@@ -67,7 +67,7 @@
             "name": "navWorkLabel",
             "label": "Nav label — The Work",
             "group": "Basics",
-            "value": "The Work",
+            "value": "Therapy",
             "type": "text"
         },
         {
