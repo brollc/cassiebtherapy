@@ -64,17 +64,24 @@
             "type": "text"
         },
         {
-            "name": "navWorkLabel",
-            "label": "Nav label — The Work",
+            "name": "navTherapyLabel",
+            "label": "Therapy nav label (dropdown parent)",
             "group": "Basics",
             "value": "Therapy",
             "type": "text"
         },
         {
-            "name": "navSpecialtiesLabel",
-            "label": "Nav label — Specialties",
+            "name": "navIndividualLabel",
+            "label": "Nav: Individual Therapy",
             "group": "Basics",
-            "value": "Specialties",
+            "value": "Individual Therapy",
+            "type": "text"
+        },
+        {
+            "name": "navCouplesLabel",
+            "label": "Nav: Couples Therapy",
+            "group": "Basics",
+            "value": "Couples Therapy",
             "type": "text"
         },
         {
