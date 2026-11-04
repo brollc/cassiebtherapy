@@ -72,7 +72,7 @@ const ctx = {
   page: pages[0], post: posts[0],
 };
 
-for (const f of ["index.hbs","post.hbs","page.hbs","page-about.hbs","page-therapy.hbs","page-bookshelf.hbs","tag.hbs","author.hbs","404.hbs"]) {
+for (const f of ["index.hbs","post.hbs","page.hbs","page-about.hbs","page-therapy.hbs","page-couples-therapy.hbs","page-bookshelf.hbs","tag.hbs","author.hbs","404.hbs"]) {
   try {
     const out = Handlebars.compile(fs.readFileSync(path.join(themeDir, f), "utf8"))(ctx, { data });
     if (/\{\{|\}\}/.test(out)) fail(`${f}: unresolved tokens in output`);
@@ -105,10 +105,11 @@ if (!work.includes("holiday dinner")) fail("work page template missing body cont
 const shelf = Handlebars.compile(fs.readFileSync(path.join(themeDir, "page-bookshelf.hbs"), "utf8"))(ctx, { data });
 if (!shelf.includes("holiday dinner")) fail("bookshelf page template missing body content");
 // seed files carry the real page content
-for (const pg of ["about", "therapy", "bookshelf"]) {
+for (const pg of ["about", "therapy", "couples-therapy", "bookshelf"]) {
   const marks = {
     "about": ["holiday dinner", "MN License #cc04877"],
     "therapy": ["Questions we might sit with together", "Narrative", "Attachment"],
+    "couples-therapy": ["Are you there for me?", "relational healing", "high-pressure career"],
     "bookshelf": ["Dungeon Crawler Carl", "The Body Keeps the Score", "#DOMAIN_NAME#", 'data-responsive="false"'],
   }[pg];
   const seed = fs.readFileSync(path.join(themeDir, "seed", pg + ".html"), "utf8");

@@ -57,6 +57,7 @@ const PAGES = [
   { slug: "home", title: "Home", template: "", frontpage: true },
   { slug: "about", title: "About", template: "about" },
   { slug: "therapy", title: "Therapy", template: "therapy", oldSlug: "the-work" },
+  { slug: "couples-therapy", title: "Couples Therapy", template: "couples-therapy" },
   { slug: "bookshelf", title: "Bookshelf", template: "bookshelf" },
 ];
 
@@ -189,7 +190,7 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     s = s.replace(/<!--[\s\S]*?-->/g, "");
     s = s.replace(/file:\/\/\/home\/cassie\/Publii\/sites\/cassie-b-therapy\/preview\//g, "");
     s = s.replace(/\/assets\/images\/books\//g, "images/books/");
-    for (const pg of ["about", "therapy", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
+    for (const pg of ["about", "therapy", "couples-therapy", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
     s = s.split('href="/"').join('href="index.html"');
     // theme footer links the logo to baseUrl#home; static depth pages link to index.html directly
     s = s.replace('href="#home"', 'href="index.html"');

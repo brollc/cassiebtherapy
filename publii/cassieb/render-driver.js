@@ -159,7 +159,7 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
     let s = src.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
     s = s.replace(/<!--[\s\S]*?-->/g, "");
     s = s.replace(/file:\/\/\/home\/cassie\/Publii\/sites\/cassie-b-therapy\/preview\//g, "");
-    for (const pg of ["about", "therapy", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
+    for (const pg of ["about", "therapy", "couples-therapy", "bookshelf"]) s = s.split(`href="${pg}/"`).join(`href="${pg}.html"`);
     s = s.replace(/assets\/css\/main\.css[^"]*/g, "STYLESHEET");
     s = s.replace(/>\s+</g, "><").replace(/>\s+/g, ">").replace(/\s+</g, "<").replace(/\s+/g, " ");
     return s.trim();

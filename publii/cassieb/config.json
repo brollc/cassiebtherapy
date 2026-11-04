@@ -5,6 +5,7 @@
     "pageTemplates": {
         "about": "About",
         "therapy": "Therapy",
+        "couples-therapy": "Couples Therapy",
         "bookshelf": "Bookshelf"
     },
     "renderer": {
