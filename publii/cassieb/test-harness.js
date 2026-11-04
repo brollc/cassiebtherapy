@@ -84,7 +84,7 @@ for (const f of ["index.hbs","post.hbs","page.hbs","page-about.hbs","page-therap
 const decode = (s) => s.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&#x60;/g, "`");
 const home = decode(Handlebars.compile(fs.readFileSync(path.join(themeDir, "index.hbs"), "utf8"))(ctx, { data }));
 const must = [
-  "Integrative, holistic psychotherapy", "Hi there!", "I'm glad you're here.",
+  "Integrative, holistic psychotherapy", "Hello there!", "I'm glad you're here.",
   "MN License #cc04877", "feels like crap too", "Session Cost", "$175 for a 50-minute session",
   "private-pay practice", "sliding scale", "Browse the full bookshelf",
   "cassie@cassiebtherapy.com", "FAQ", "How does online therapy work?",

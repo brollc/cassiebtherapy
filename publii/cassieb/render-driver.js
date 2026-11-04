@@ -139,7 +139,7 @@ mainProcessAPI.receiveOnce('app-preview-render-error', (...a) => { window.__rend
   const home = fs.readFileSync(path.join(PREVIEW_DIR, "index.html"), "utf8");
   const decode = s => s.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
   const page = decode(home);
-  const must = ["Integrative, holistic psychotherapy", "Hi there!", "I'm glad you're here.",
+  const must = ["Integrative, holistic psychotherapy", "Hello there!", "I'm glad you're here.",
     "MN License #cc04877", "feels like crap too", "Session Cost", "$175 for a 50-minute session",
     "private-pay practice", "Browse the full bookshelf", "cassie@cassiebtherapy.com",
     "How does online therapy work?", "main.css"];
