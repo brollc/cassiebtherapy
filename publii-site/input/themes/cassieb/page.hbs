@@ -1,0 +1,26 @@
+{{! Static page (default template — Privacy Policy, Good Faith Estimate, etc.) }}
+{{> head}}
+{{> header}}
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      {{#page}}
+      <h1>{{title}}</h1>
+      {{/page}}
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      {{#page}}
+      <div class="post-content">
+        {{{text}}}
+      </div>
+      <p class="page-back"><a href="{{ @website.baseUrl }}">{{ @config.custom.backHomeLabel }}</a></p>
+      {{/page}}
+    </div>
+  </section>
+</main>
+
+{{> footer}}

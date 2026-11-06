@@ -1,0 +1,417 @@
+{
+    "name": "Cassieb",
+    "version": "1.0.0.0",
+    "author": "Cassie Broll",
+    "pageTemplates": {
+        "about": "About",
+        "therapy": "Therapy",
+        "couples-therapy": "Couples Therapy",
+        "bookshelf": "Bookshelf"
+    },
+    "renderer": {
+        "create404page": true,
+        "createTagPages": true,
+        "createAuthorPages": true,
+        "createSearchPage": false,
+        "createTagsList": false,
+        "createContentStructure": true,
+        "renderPrevNextPosts": false,
+        "relatedPostsNumber": 0
+    },
+    "supportedFeatures": {
+        "blockEditor": true,
+        "errorPage": true,
+        "pages": true
+    },
+    "config": [
+        {
+            "name": "postsPerPage",
+            "label": "Posts per page (keep high so the homepage doesn't paginate)",
+            "value": 999,
+            "type": "number"
+        },
+        {
+            "name": "tagsPostsPerPage",
+            "label": "Tags posts per page",
+            "value": 12,
+            "type": "number"
+        },
+        {
+            "name": "authorsPostsPerPage",
+            "label": "Authors posts per page",
+            "value": 12,
+            "type": "number"
+        },
+        {
+            "name": "excerptLength",
+            "label": "Excerpt length (words)",
+            "value": 30,
+            "type": "number"
+        },
+        {
+            "name": "logo",
+            "label": "Website logo",
+            "value": "",
+            "type": "upload",
+            "upload": true
+        }
+    ],
+    "customConfig": [
+        {
+            "name": "navAboutLabel",
+            "label": "Nav label — About",
+            "group": "Basics",
+            "value": "About",
+            "type": "text"
+        },
+        {
+            "name": "navTherapyLabel",
+            "label": "Therapy nav label (dropdown parent)",
+            "group": "Basics",
+            "value": "Therapy",
+            "type": "text"
+        },
+        {
+            "name": "navIndividualLabel",
+            "label": "Nav: Individual Therapy",
+            "group": "Basics",
+            "value": "Individual Therapy",
+            "type": "text"
+        },
+        {
+            "name": "navCouplesLabel",
+            "label": "Nav: Couples Therapy",
+            "group": "Basics",
+            "value": "Couples Therapy",
+            "type": "text"
+        },
+        {
+            "name": "navBookshelfLabel",
+            "label": "Nav label — Bookshelf",
+            "group": "Basics",
+            "value": "Bookshelf",
+            "type": "text"
+        },
+        {
+            "name": "navFaqLabel",
+            "label": "Nav label — FAQ",
+            "group": "Basics",
+            "value": "FAQ",
+            "type": "text"
+        },
+        {
+            "name": "navCtaLabel",
+            "label": "Header button label",
+            "group": "Basics",
+            "value": "Get in Touch",
+            "type": "text"
+        },
+        {
+            "name": "backHomeLabel",
+            "label": "Back-to-home link label (used on pages & posts)",
+            "group": "Basics",
+            "value": "← Back home",
+            "type": "text"
+        },
+        {
+            "name": "crisisLineNote",
+            "label": "Crisis note (shown in footer)",
+            "group": "Basics",
+            "value": "In crisis? Call or text",
+            "type": "text"
+        },
+        {
+            "name": "blogEyebrow",
+            "label": "Blog section — small text above the title",
+            "group": "Basics",
+            "value": "Notes & resources",
+            "type": "text",
+            "note": "The 'From the blog' section appears on the homepage only once you have written at least one post."
+        },
+        {
+            "name": "blogTitle",
+            "label": "Blog section — title",
+            "group": "Basics",
+            "value": "From the blog",
+            "type": "text"
+        },
+        {
+            "name": "blogLead",
+            "label": "Blog section — intro",
+            "group": "Basics",
+            "value": "Occasional notes on therapy, relationships, and the messy, wonderful work of being human.",
+            "type": "textarea"
+        },
+        {
+            "name": "faviconUpload",
+            "label": "Upload favicon",
+            "group": "Basics",
+            "value": "",
+            "type": "smallupload",
+            "upload": true,
+            "note": "Optional. If empty, the green leaf icon is used."
+        },
+        {
+            "name": "contactEmailLabel",
+            "label": "Email row — label",
+            "group": "Contact",
+            "value": "Email",
+            "type": "text"
+        },
+        {
+            "name": "contactEmail",
+            "label": "Email row — address",
+            "group": "Contact",
+            "value": "cassie@cassiebtherapy.com",
+            "type": "text"
+        },
+        {
+            "name": "footerTagline",
+            "label": "Footer tagline",
+            "group": "Footer",
+            "value": "Individual & couples therapy in Minnesota — with curiosity, compassion, and a little laughter.",
+            "type": "textarea"
+        },
+        {
+            "name": "footerExploreTitle",
+            "label": "Footer column 1 — title",
+            "group": "Footer",
+            "value": "Explore",
+            "type": "text"
+        },
+        {
+            "name": "footerSpecialtiesTitle",
+            "label": "Footer column 2 — title",
+            "group": "Footer",
+            "value": "Specialties",
+            "type": "text"
+        },
+        {
+            "name": "footerTouchTitle",
+            "label": "Footer column 3 — title",
+            "group": "Footer",
+            "value": "Get in touch",
+            "type": "text"
+        },
+        {
+            "name": "footerIndividualLabel",
+            "label": "Footer column 2 — 'Individual Therapy' link text",
+            "group": "Footer",
+            "value": "Individual Therapy",
+            "type": "text"
+        },
+        {
+            "name": "footerCouplesLabel",
+            "label": "Footer column 2 — 'Couples Therapy' link text",
+            "group": "Footer",
+            "value": "Couples Therapy",
+            "type": "text"
+        },
+        {
+            "name": "footerConsultLabel",
+            "label": "Footer column 3 — consult link text",
+            "group": "Footer",
+            "value": "Book a consult",
+            "type": "text"
+        },
+        {
+            "name": "footerLegalLinks",
+            "label": "Legal links (Privacy Policy, Good Faith Estimate… — empty until you create those pages)",
+            "group": "Footer",
+            "type": "repeater",
+            "value": [],
+            "maxCount": -1,
+            "hasEmptyState": true,
+            "translations": {
+                "addItem": "Add a link",
+                "duplicateItem": "Duplicate link",
+                "removeItem": "Remove link",
+                "emptyState": "Click the button to add your first link"
+            },
+            "structure": [
+                {
+                    "name": "label",
+                    "label": "Link text",
+                    "type": "text",
+                    "value": "",
+                    "width": 40
+                },
+                {
+                    "name": "url",
+                    "label": "URL",
+                    "type": "text",
+                    "value": "",
+                    "width": 60
+                }
+            ]
+        }
+    ],
+    "menus": {},
+    "files": {
+        "ignoreAssets": [
+            "scss",
+            ".DS_Store"
+        ],
+        "assetsPath": "assets",
+        "partialsPath": "partials",
+        "responsiveImages": {
+            "contentImages": {
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto"
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 749,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1200,
+                        "height": "auto"
+                    }
+                }
+            },
+            "featuredImages": {
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": 200
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 749,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1200,
+                        "height": "auto"
+                    }
+                }
+            },
+            "tagImages": {
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": 200
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 749,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1200,
+                        "height": "auto"
+                    }
+                }
+            },
+            "authorImages": {
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": 200
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 749,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1200,
+                        "height": "auto"
+                    }
+                }
+            },
+            "optionImages": {
+                "sizes": "(max-width: 1200px) 100vw, 1200px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": 200
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 749,
+                        "height": "auto"
+                    },
+                    "xl": {
+                        "width": 1200,
+                        "height": "auto"
+                    }
+                }
+            },
+            "galleryImages": {
+                "sizes": "",
+                "dimensions": {
+                    "thumbnail": {
+                        "width": 720,
+                        "height": "auto"
+                    }
+                }
+            }
+        }
+    },
+    "postTemplates": {},
+    "tagTemplates": {},
+    "authorTemplates": {},
+    "defaultTemplates": {
+        "post": "",
+        "page": ""
+    },
+    "postConfig": [],
+    "pageConfig": [
+        {
+            "name": "useAsFrontpage",
+            "label": "Use as frontpage",
+            "value": "off",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": "on"
+                },
+                {
+                    "label": "Disabled",
+                    "value": "off"
+                }
+            ]
+        }
+    ],
+    "customElements": [
+        {
+            "label": "Intro (italic serif)",
+            "cssClasses": "about-intro",
+            "selector": "p"
+        },
+        {
+            "label": "Standout line (large serif)",
+            "cssClasses": "session-cost-fee",
+            "selector": "p"
+        },
+        {
+            "label": "Dive link",
+            "cssClasses": "about-link",
+            "selector": "p"
+        }
+    ]
+}

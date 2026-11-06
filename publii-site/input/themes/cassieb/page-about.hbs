@@ -1,0 +1,15 @@
+{{!
+  Body-driven page template — all content is edited in Publii's WYSIWYG
+  page editor and rendered inside the site's design shell. Create the page
+  with the matching slug and select this template in the page editor.
+}}
+{{> head}}
+{{> header}}
+
+<main id="main">
+  {{#page}}
+  {{{text}}}
+  {{/page}}
+</main>
+
+{{> footer}}

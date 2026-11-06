@@ -1,0 +1,35 @@
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="{{ @website.baseUrl }}#home" class="logo" aria-label="{{ @website.name }} — home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 4C30 10 35 16 35 24a13 13 0 0 1-26 0c0-8 5-14 13-20z" fill="var(--leaf)"/>
+          <path d="M22 36V12M22 12c-4 0-7 3-7 7M22 12c4 0 7 3 7 7M22 20c-3 0-5 2-5 5M22 20c3 0 5 2 5 5" stroke="#f7f4ed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="logo-text">{{ @website.name }}</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="{{ @website.baseUrl }}#about">{{ @config.custom.navAboutLabel }}</a></li>
+        <li class="nav-dropdown">
+          <a href="{{ @website.baseUrl }}#services" class="nav-dropdown-toggle" aria-haspopup="true">{{ @config.custom.navTherapyLabel }} <span class="nav-caret" aria-hidden="true">&#9662;</span></a>
+          <ul class="nav-submenu">
+            <li><a href="{{ @website.baseUrl }}#individual-therapy">{{ @config.custom.navIndividualLabel }}</a></li>
+            <li><a href="{{ @website.baseUrl }}couples-therapy/">{{ @config.custom.navCouplesLabel }}</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ @website.baseUrl }}#bookshelf">{{ @config.custom.navBookshelfLabel }}</a></li>
+        <li><a href="{{ @website.baseUrl }}#faq">{{ @config.custom.navFaqLabel }}</a></li>
+        <li><a href="{{ @website.baseUrl }}#contact" class="nav-cta">{{ @config.custom.navCtaLabel }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
