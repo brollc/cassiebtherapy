@@ -17,18 +17,12 @@ regenerable `preview/`/`output/` folders.
 
 ## Two-computer workflow
 
-**After editing in Publii (machine A):**
-```sh
-./publii-sync.sh pull        # close Publii first
-git add publii-site && git commit -m "..." && git push
-```
+Use the one-command wrapper — see **../PUBLII-SYNC.md**:
 
-**To pick up edits (machine B):**
-```sh
-git pull
-./publii-sync.sh push        # close Publii first
-# open Publii — the site appears with the latest content
-```
+- `./publii.sh save` after editing in Publii (close Publii first)
+- `./publii.sh load` before opening Publii on the other computer
+- `./publii.sh status` any time you're unsure
 
-The DB is a binary file, so each sync commit includes a full snapshot of your
-content — that's the point: your words are version-controlled and recoverable.
+(Advanced / fallback: `./publii-sync.sh pull|push` plus git, as before. The DB
+is binary, so each sync commit is a full snapshot of your content — version-
+controlled and recoverable.)
