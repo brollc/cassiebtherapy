@@ -202,14 +202,6 @@ p { margin: 0 0 1em; }
     url("images/cassie-headshot.jpg") top/cover;
   background-color: var(--leaf-light);
 }
-.hero-art-badge {
-  position: absolute; bottom: -18px; right: -10px; z-index: 2;
-  background: var(--cream); padding: 14px 20px; border-radius: 999px;
-  box-shadow: var(--shadow-md); display: inline-flex; align-items: center; gap: 12px;
-  transform: rotate(2deg);
-}
-.badge-emoji { font-size: 1.6rem; }
-.badge-text { font-size: 0.85rem; font-weight: 700; color: var(--leaf-deep); line-height: 1.3; }
 
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; line-height: 0; z-index: -1; }
 .hero-wave svg { width: 100%; height: 110px; }
@@ -676,7 +668,6 @@ section[id], article[id] { scroll-margin-top: 90px; }
   .hero { padding: 56px 0 110px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
-  .hero-art-badge { right: 0; }
   .steps-grid, .specialties-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 28px 24px; }
