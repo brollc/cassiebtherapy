@@ -22,7 +22,24 @@
 set -euo pipefail
 
 SITE_NAME="cassie-b-therapy"
-LIVE_DIR="$HOME/Publii/sites/$SITE_NAME"
+
+# Publii stores its sites folder in a different place on each OS:
+#   macOS:  ~/Documents/Publii/sites/
+#   Linux:  ~/Publii/sites/
+case "$(uname -s)" in
+  Darwin)
+    LIVE_BASE_DIR="$HOME/Documents/Publii/sites"
+    ;;
+  Linux)
+    LIVE_BASE_DIR="$HOME/Publii/sites"
+    ;;
+  *)
+    echo "Unsupported operating system: $(uname -s)" >&2
+    exit 1
+    ;;
+esac
+
+LIVE_DIR="$LIVE_BASE_DIR/$SITE_NAME"
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)/publii-site"
 
 RSYNC_EXCLUDES=(
@@ -35,7 +52,8 @@ RSYNC_EXCLUDES=(
 )
 
 check_publii_closed() {
-  if pgrep -f 'publii/app[.]asar' >/dev/null 2>&1; then
+  # Process name is "Publii" on macOS, "publii" on Linux
+  if pgrep -x Publii >/dev/null 2>&1 || pgrep -x publii >/dev/null 2>&1; then
     echo "Publii is running — close it first, then re-run." >&2
     exit 1
   fi

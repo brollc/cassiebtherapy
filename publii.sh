@@ -22,7 +22,8 @@ warn() { printf '  %s\n' "${YELLOW}$1${RESET}"; }
 fail() { printf '  %s\n' "${RED}$1${RESET}"; exit 1; }
 
 check_publii_closed() {
-  if pgrep -f 'publii/app[.]asar' >/dev/null 2>&1; then
+  # Process name is "Publii" on macOS, "publii" on Linux
+  if pgrep -x Publii >/dev/null 2>&1 || pgrep -x publii >/dev/null 2>&1; then
     fail "Publii is open. Close Publii first (your latest edits are safe inside it), then run this again."
   fi
 }
