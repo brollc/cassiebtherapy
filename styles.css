@@ -466,6 +466,7 @@ p { margin: 0 0 1em; }
 }
 .specialty-card h3 { margin-bottom: 0.5em; }
 .specialty-card p { color: var(--ink-soft); margin: 0; font-size: 0.98rem; }
+.specialty-card .btn { margin-top: 24px; }
 
 /* ====================================================
    FEATURED IN
@@ -597,6 +598,8 @@ section[id], article[id] { scroll-margin-top: 90px; }
   background: var(--cream); border: 1px solid var(--line); border-radius: 14px;
   box-shadow: var(--shadow-md); padding: 8px; min-width: 210px; z-index: 110; list-style: none; margin: 0;
 }
+/* Invisible bridge keeps :hover alive while the pointer crosses the gap to the submenu */
+.nav-submenu::before { content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
 .nav-dropdown:hover .nav-submenu,
 .nav-dropdown:focus-within .nav-submenu { display: block; }
 .nav-submenu a { display: block; padding: 10px 16px; border-radius: 10px; white-space: nowrap; font-size: 0.93rem; }

@@ -259,6 +259,7 @@ img { max-width: 100%; display: block; border-radius: 10px; background: var(--sa
   background: linear-gradient(135deg, #c5d3bb, #9bb88a);
   display: grid; place-items: center; font-size: 1.8rem;
 }
+.specialty-card .btn { margin-top: 24px; }
 
 /* ---------- FAQ accordion ---------- */
 .faq { padding: 100px 0; background: #f3eee0; }
