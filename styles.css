@@ -171,7 +171,7 @@ p { margin: 0 0 1em; }
 .leaf-1 { top: 12%; left: 4%; transform: rotate(-20deg); }
 .leaf-2 { bottom: 16%; right: 6%; transform: rotate(160deg) scaleX(-1); }
 
-.hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; position: relative; }
+.hero-inner { display: grid; grid-template-columns: 1fr; gap: 64px; align-items: center; position: relative; }
 .hero-content { max-width: 560px; }
 .hero-eyebrow {
   font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
@@ -180,28 +180,6 @@ p { margin: 0 0 1em; }
 .hero-title { margin-bottom: 0.5em; }
 .hero-subtitle { font-size: 1.12rem; color: var(--ink-soft); margin-bottom: 2em; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-
-/* hero art */
-.hero-art { position: relative; }
-.hero-art-circle {
-  position: absolute; top: -28px; left: -28px; right: 28px; bottom: -28px;
-  background: radial-gradient(circle at 40% 30%, rgba(155,184,138,0.45), rgba(201,139,106,0.25));
-  border-radius: 46% 54% 54% 46% / 54% 46% 54% 46%;
-  z-index: 0;
-}
-.hero-art-frame {
-  position: relative; z-index: 1; border-radius: 48% 52% 50% 50% / 52% 48% 52% 48%;
-  overflow: hidden; box-shadow: var(--shadow-lg); transform: rotate(-1.5deg);
-  transition: transform 0.5s ease;
-}
-.hero-art-frame:hover { transform: rotate(0deg); }
-.hero-art-photo {
-  height: 420px;
-  background:
-    linear-gradient(160deg, rgba(107,142,90,0.0), rgba(68,97,58,0.35)),
-    url("images/cassie-headshot.jpg") top/cover;
-  background-color: var(--leaf-light);
-}
 
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; line-height: 0; z-index: -1; }
 .hero-wave svg { width: 100%; height: 110px; }
@@ -220,7 +198,7 @@ p { margin: 0 0 1em; }
   height: 500px;
   background:
     linear-gradient(160deg, rgba(155,184,138,0.0), rgba(68,97,58,0.3)),
-    url("images/sunrise-road.jpg") top/cover;
+    url("images/cassie-headshot.jpg") top/cover;
   background-color: var(--leaf-light);
 }
 .about-content .section-eyebrow { color: var(--moss); }
@@ -651,7 +629,6 @@ section[id], article[id] { scroll-margin-top: 90px; }
 }
 @media (max-width: 980px) {
   .hero-inner { grid-template-columns: 1fr; gap: 56px; }
-  .hero-art { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 56px; }
   .about-art { display: none; }
   .workthrough-list { columns: 1; }

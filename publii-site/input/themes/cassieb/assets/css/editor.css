@@ -196,7 +196,6 @@ img { max-width: 100%; display: block; border-radius: 10px; background: var(--sa
     linear-gradient(175deg, #eef2e8 0%, #f7f4ed 100%);
 }
 .hero-inner { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; position: relative; }
-.hero-art { display: none; } /* hidden on narrow canvases — wide screens restore it below */
 .hero-content { max-width: 560px; }
 .hero-eyebrow { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clay); margin-bottom: 1.2em; }
 .hero-title { margin-bottom: 0.5em; font-weight: 600; }
@@ -209,27 +208,7 @@ img { max-width: 100%; display: block; border-radius: 10px; background: var(--sa
 .btn-primary { background: var(--leaf-deep); color: #f7f4ed; box-shadow: 0 10px 26px rgba(68, 97, 58, 0.3); }
 .btn-ghost { background: transparent; color: var(--leaf-deep); border: 1.8px solid var(--leaf); }
 .btn-cream { background: #f7f4ed; color: var(--leaf-deep); }
-.hero-art { position: relative; }
-.hero-art-circle {
-  position: absolute; top: -28px; left: -28px; right: 28px; bottom: -28px;
-  background: radial-gradient(circle at 40% 30%, rgba(155,184,138,0.45), rgba(201,139,106,0.25));
-  border-radius: 46% 54% 54% 46% / 54% 46% 54% 46%;
-}
-.hero-art-frame {
-  position: relative; z-index: 1; border-radius: 48% 52% 50% 50% / 52% 48% 52% 48%;
-  overflow: hidden; box-shadow: var(--shadow-md); transform: rotate(-1.5deg);
-}
-.hero-art-photo {
-  height: 420px; background: url('../images/cassie-headshot.jpg') center/cover;
-  background-color: var(--leaf-light);
-}
 .hero-wave { display: none; } /* decorative svg — skipped in editor */
-
-/* hero photo art only on wide canvases (matches the site's desktop layout) */
-@media (min-width: 981px) {
-  .hero-inner { grid-template-columns: 1.1fr 0.9fr; gap: 64px; }
-  .hero-art { display: block; }
-}
 
 /* ---------- steps ---------- */
 .steps { padding: 100px 0; background: #f7f4ed; }
