@@ -177,7 +177,7 @@
         }
     },
     "deployment": {
-        "protocol": "",
+        "protocol": "github-pages",
         "relativeUrls": false,
         "port": "",
         "server": "",
@@ -213,10 +213,10 @@
         },
         "github": {
             "server": "api.github.com",
-            "user": "",
-            "repo": "",
-            "branch": "",
-            "token": "",
+            "user": "brollc",
+            "repo": "cassiebtherapy",
+            "branch": "deploy",
+            "token": "publii-gh-token uuid-1793585205356-129299702",
             "parallelOperations": 1,
             "apiRateLimiting": 1
         },

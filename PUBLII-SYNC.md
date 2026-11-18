@@ -27,6 +27,16 @@ close it and run the script).
 
 Run `./publii.sh status` if you're ever unsure which computer has the newest work.
 
+## Publishing your site (Sync in Publii)
+
+The project folder (`main` on GitHub) and the published website are kept separate:
+
+- **Sync in Publii publishes your site to the `deploy` branch** — that is what the public
+  website is served from. It never touches the project files.
+- The Server settings (GitHub user/repo/branch) travel with the project, so you don't need
+  to re-enter them after a `load`. Only the GitHub token is stored per-computer — the first
+  Sync on a new computer may ask for it once.
+
 ## If something goes wrong
 
 - **"There's a conflict"** — this computer has unsaved work *and* new work arrived from
@@ -34,6 +44,15 @@ Run `./publii.sh status` if you're ever unsure which computer has the newest wor
 - **"Can't reach the online folder"** — check your internet connection, then retry.
 - **Anything else** — stop and ask for help rather than forcing anything. Your content
   is committed to the project folder on each `save`, so it can almost always be recovered.
+
+**One-time fix for the other computer (if it reports a conflict after Nov 2026):**
+the repo was re-aligned once (Nov 17, 2026) to separate the project from the published
+site. If `./publii.sh load` says there's a conflict that `save` + `load` doesn't clear,
+run this once — after making sure your work is saved:
+
+```sh
+git fetch && git reset --hard origin/main
+```
 
 ## One-time setup on a new computer
 
